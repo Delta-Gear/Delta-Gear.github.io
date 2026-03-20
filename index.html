@@ -24,7 +24,6 @@
 
         --header-height: 78px;
         --portfolio-toolbar-height: 84px;
-        --section-heading-height: 62px;
         --radius: 20px;
         --max-width: 1320px;
       }
@@ -219,7 +218,7 @@
 
       /* SKILLS */
       .skills-section {
-        padding: 18px 0 70px;
+        padding: 18px 0 10px;
       }
 
       .section-title {
@@ -229,9 +228,10 @@
       }
 
       .section-subtitle {
-        margin: 0 0 24px;
+        margin: 0;
         color: var(--muted);
         line-height: 1.7;
+        text-align: right;
       }
 
       .skills-category {
@@ -264,37 +264,6 @@
         align-items: start;
       }
 
-      .career-overview-group {
-        background: var(--surface);
-        border: 1px solid var(--line);
-        border-radius: 18px;
-        padding: 18px;
-        box-shadow: var(--shadow);
-      }
-
-      .career-overview-entry {
-        margin-bottom: 14px;
-      }
-
-      .career-overview-entry h4 {
-        margin: 0 0 4px;
-        font-size: 1.05rem;
-        color: var(--charcoal);
-      }
-
-      .career-overview-entry time {
-        display: block;
-        color: var(--muted);
-        font-size: 0.9rem;
-        margin-bottom: 6px;
-      }
-
-      .career-overview-entry p {
-        margin: 0;
-        color: var(--muted);
-        line-height: 1.6;
-      }
-
       /* EDUCATION CARDS */
       .education-grid {
         display: grid;
@@ -304,11 +273,22 @@
       }
 
       .education-card {
+        display: block;
         background: var(--surface);
         border: 1px solid var(--line);
         border-radius: 14px;
         padding: 14px;
         box-shadow: var(--shadow);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .education-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(45, 39, 32, 0.16);
       }
 
       .education-card strong {
@@ -355,6 +335,16 @@
         border-radius: 18px;
         overflow: hidden;
         box-shadow: var(--shadow);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .professional-experience-card:hover {
+        border-color: var(--accent);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 24px rgba(45, 39, 32, 0.16);
       }
 
       .professional-experience-card-image {
@@ -365,11 +355,9 @@
       }
 
       .professional-experience-card-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        max-width: 140px;
-        max-height: 140px;
+        width: 75%;
+        height: 75%;
+        object-fit: contain;
       }
 
       .professional-experience-card-content {
@@ -410,7 +398,13 @@
         font-size: 0.9rem;
         color: var(--muted);
         line-height: 1.6;
-        margin: 0;
+        margin: 0 0 12px 0;
+      }
+
+      .professional-experience-card .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
       }
 
       @media (max-width: 980px) {
@@ -486,11 +480,21 @@
       .career-overview-toolbar {
         position: sticky;
         top: var(--header-height);
-        z-index: 905;
-        background: rgba(233, 228, 220, 0.96);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid rgba(90, 82, 74, 0.12);
-        margin-bottom: 18px;
+        z-index: 900;
+        background: rgba(233, 228, 220, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(90, 82, 74, 0.16);
+        margin-bottom: 22px;
+      }
+
+      .skills-toolbar {
+        position: sticky;
+        top: var(--header-height);
+        z-index: 900;
+        background: rgba(233, 228, 220, 0.94);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(90, 82, 74, 0.16);
+        margin-bottom: 22px;
       }
 
       .career-overview-toolbar-inner {
@@ -498,22 +502,69 @@
         margin: 0 auto;
         min-height: var(--portfolio-toolbar-height);
         display: flex;
-        align-items: center;
+        align-items: flex-end;
+        justify-content: space-between;
         padding: 16px 0;
       }
 
+      .career-overview-toolbar-text {
+        display: flex;
+        align-items: flex-end;
+        gap: 400px;
+      }
+
       .career-overview-toolbar-text h2 {
-        margin: 0 0 4px;
+        margin: 0;
         font-size: 2rem;
         color: var(--charcoal);
+        flex-shrink: 0;
+      }
+
+      .career-overview-toolbar-text .section-subtitle {
+        margin: 0 0 2px 0;
+        text-align: right;
+        min-width: 300px;
+        line-height: 1.4;
+      }
+
+      .skills-toolbar-inner {
+        width: min(100% - 32px, var(--max-width));
+        margin: 0 auto;
+        min-height: var(--portfolio-toolbar-height);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 16px 0;
+      }
+
+      .skills-toolbar-text {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+
+      .skills-toolbar-text h2 {
+        margin: 0;
+        font-size: 2rem;
+        color: var(--charcoal);
+      }
+
+      .skills-toolbar-text .section-subtitle {
+        margin: 0;
+        text-align: right;
+        min-width: 300px;
+      }
+
+      .portfolio-toolbar-inner,
+      .portfolio-toolbar-text {
+        display: flex;
+        align-items: center;
       }
 
       .portfolio-toolbar-inner {
         width: min(100% - 32px, var(--max-width));
         margin: 0 auto;
         min-height: var(--portfolio-toolbar-height);
-        display: flex;
-        align-items: center;
         justify-content: space-between;
         gap: 16px;
         padding: 16px 0;
@@ -630,12 +681,22 @@
         border-bottom: 1px solid rgba(90, 82, 74, 0.15);
         padding: 14px 0 12px;
         margin-bottom: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
       }
 
       .portfolio-group-heading h3 {
         margin: 0;
         font-size: 1.45rem;
         color: var(--charcoal);
+      }
+
+      .portfolio-group-date {
+        font-size: 0.9rem;
+        color: var(--muted);
+        text-align: right;
+        white-space: nowrap;
       }
 
       .cards-list {
@@ -709,9 +770,71 @@
       }
 
       .site-footer {
-        padding: 40px 0 60px;
-        text-align: center;
-        color: var(--muted);
+        padding: 60px 0;
+        background: var(--charcoal);
+        color: #f4efe8;
+        margin-top: 80px;
+      }
+
+      .footer-content {
+        width: min(100% - 32px, var(--max-width));
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+      }
+
+      .footer-section h3 {
+        margin: 0 0 16px;
+        font-size: 1rem;
+        color: #f4efe8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      .footer-section p {
+        margin: 8px 0;
+        color: rgba(244, 239, 232, 0.8);
+        line-height: 1.6;
+      }
+
+      .footer-section a {
+        color: var(--accent-2);
+        text-decoration: none;
+        transition: color 0.2s ease;
+      }
+
+      .footer-section a:hover {
+        color: #f4efe8;
+      }
+
+      .social-links {
+        display: flex;
+        gap: 16px;
+        margin-top: 12px;
+      }
+
+      .social-links a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 8px;
+        font-weight: 700;
+        transition: background 0.2s ease;
+      }
+
+      .social-links a:hover {
+        background: var(--accent-2);
+      }
+
+      @media (max-width: 760px) {
+        .footer-content {
+          grid-template-columns: 1fr;
+          gap: 32px;
+        }
       }
 
       @media (max-width: 1080px) {
@@ -780,7 +903,7 @@
 
         <nav class="site-nav">
           <ul>
-            <li><a href="about.html">About</a></li>
+            <li><a href="#career-overview">Career</a></li>
             <li><a href="#portfolio">Projects</a></li>
             <li><a href="resume.pdf" target="_blank">Resume</a></li>
           </ul>
@@ -792,7 +915,7 @@
       <div class="site-container">
         <div class="hero-card">
           <div class="hero-image">
-            <img src="https://via.placeholder.com/1200x900" alt="Hero image" />
+            <img src="assets/images/Headshot.jpg" alt="Hero image" />
           </div>
           <div class="hero-content">
             <div class="hero-eyebrow">Portfolio</div>
@@ -815,10 +938,16 @@
     </section>
 
     <section class="skills-section" id="skills">
-      <div class="site-container">
-        <h2 class="section-title">Software & Skills</h2>
-        <p class="section-subtitle"></p>
+      <div class="skills-toolbar">
+        <div class="skills-toolbar-inner">
+          <div class="skills-toolbar-text">
+            <h2 class="section-title">Software & Skills</h2>
+            <p class="section-subtitle"></p>
+          </div>
+        </div>
+      </div>
 
+      <div class="site-container">
         <div class="skills-category">
           <h3>3D Modeling</h3>
           <div class="skills-grid">
@@ -891,23 +1020,23 @@
             </h3>
 
             <div class="education-grid">
-              <div class="education-card">
+              <a href="#timeline-boston-university-ms" class="education-card">
                 <strong>Boston University</strong>
                 <div class="degree">M.S. Robotics and Autonomous Systems</div>
                 <time>2025 - 2026</time>
-              </div>
+              </a>
 
-              <div class="education-card">
+              <a href="#timeline-mit" class="education-card">
                 <strong>Massachusetts Institute of Technology</strong>
                 <div class="degree">Certificate — Applied Data Science</div>
                 <time>2023</time>
-              </div>
+              </a>
 
-              <div class="education-card">
+              <a href="#timeline-umass" class="education-card">
                 <strong>University of Massachusetts Amherst</strong>
                 <div class="degree">B.S. Mechanical Engineering</div>
                 <time>2014 - 2018</time>
-              </div>
+              </a>
             </div>
           </div>
 
@@ -926,7 +1055,10 @@
             </h3>
 
             <div class="professional-experience-cards">
-              <article class="professional-experience-card">
+              <a
+                href="#timeline-boston-micromachines"
+                class="professional-experience-card"
+              >
                 <div class="professional-experience-card-image">
                   <img
                     src="assets/images/logo_BMC.png"
@@ -953,10 +1085,19 @@
                     manufacturing automation and custom OEM solutions,
                     implementing ECOs and SolidWorks PDM for revision control.
                   </p>
+                  <div class="tag-list">
+                    <span class="tag">SolidWorks</span>
+                    <span class="tag">Product Design</span>
+                    <span class="tag">Manufacturing</span>
+                    <span class="tag">Leadership</span>
+                  </div>
                 </div>
-              </article>
+              </a>
 
-              <article class="professional-experience-card">
+              <a
+                href="#timeline-lenze-americas"
+                class="professional-experience-card"
+              >
                 <div class="professional-experience-card-image">
                   <img
                     src="assets/images/logo_Lenze.svg"
@@ -978,11 +1119,17 @@
                     >
                   </div>
                   <p class="professional-experience-card-description">
-                    Designed fixtures, assemblies, and prototypes supporting
-                    iterative development and test cycles.
+                    Investigated and solved failures in customer Industrial
+                    Automation systems; involving motors, VFDs and IoT.
                   </p>
+                  <div class="tag-list">
+                    <span class="tag">Troubleshooting</span>
+                    <span class="tag">Industrial Automation</span>
+                    <span class="tag">VFDs</span>
+                    <span class="tag">Customer Support</span>
+                  </div>
                 </div>
-              </article>
+              </a>
             </div>
           </div>
         </div>
@@ -994,7 +1141,6 @@
         <div class="portfolio-toolbar-inner">
           <div class="portfolio-toolbar-text">
             <h2>Project Portfolio</h2>
-            <p>Browse by timeline or by skill category.</p>
           </div>
 
           <div class="view-toggle">
@@ -1013,19 +1159,32 @@
 
             <ul class="sidebar-menu timeline-menu">
               <li>
-                <a href="#timeline-2025" class="sidebar-link active"
-                  >MS Robotics
-                </a>
-              </li>
-              <li>
-                <a href="#timeline-2024" class="sidebar-link"
-                  >Senior Product Engineer</a
+                <a href="#timeline-personal" class="sidebar-link"
+                  >Personal Projects</a
                 >
               </li>
               <li>
-                <a href="#timeline-2023" class="sidebar-link"
-                  >Applied Data Science Certificate</a
+                <a href="#timeline-boston-university-ms" class="sidebar-link"
+                  >Boston University</a
                 >
+              </li>
+              <li>
+                <a href="#timeline-boston-micromachines" class="sidebar-link"
+                  >Boston Micromachines</a
+                >
+              </li>
+              <li>
+                <a href="#timeline-mit" class="sidebar-link"
+                  >Massachusetts Institute of Technology</a
+                >
+              </li>
+              <li>
+                <a href="#timeline-lenze-americas" class="sidebar-link"
+                  >Lenze Americas</a
+                >
+              </li>
+              <li>
+                <a href="#timeline-umass" class="sidebar-link">UMass Amherst</a>
               </li>
             </ul>
 
@@ -1046,37 +1205,157 @@
 
           <div class="portfolio-content">
             <div class="portfolio-mode active" id="timeline">
-              <div class="portfolio-group" id="timeline-2025">
+              <div class="portfolio-group" id="timeline-personal">
                 <div class="portfolio-group-heading">
-                  <h3>2025</h3>
+                  <h3>Personal Projects</h3>
                 </div>
-
                 <div class="cards-list">
                   <article class="project-card">
                     <div class="project-image">
                       <img
                         src="https://via.placeholder.com/700x500"
-                        alt="Project 1"
+                        alt="BU Project 1"
                       />
                     </div>
                     <div class="project-content">
-                      <h4 class="project-title">
-                        Autonomous Hardware Platform
-                      </h4>
+                      <h4 class="project-title">Robotics Research Project</h4>
                       <div class="project-tagline">
-                        Mechanical design and system integration for a
-                        high-performance prototype
+                        Advanced robotics research and autonomous systems
                       </div>
                       <div class="project-description">
-                        Designed and refined a hardware platform for prototyping
-                        and testing, balancing manufacturability, performance,
-                        and assembly constraints.
+                        Conducted research in autonomous systems, focusing on
+                        system integration, control algorithms, and real-world
+                        testing of robotics platforms.
+                      </div>
+                      <div class="tag-list">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Control Systems</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Python</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="project-card">
+                    <div class="project-image">
+                      <img
+                        src="https://via.placeholder.com/700x500"
+                        alt="BU Project 2"
+                      />
+                    </div>
+                    <div class="project-content">
+                      <h4 class="project-title">Autonomous System Design</h4>
+                      <div class="project-tagline">
+                        Design and implementation of autonomous systems
+                      </div>
+                      <div class="project-description">
+                        Designed and built autonomous systems with emphasis on
+                        perception, planning, and execution in real-world
+                        environments.
+                      </div>
+                      <div class="tag-list">
+                        <span class="tag">ROS</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Planning</span>
+                        <span class="tag">Integration</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+          <div class="portfolio-content">
+            <div class="portfolio-mode active" id="timeline">
+              <div class="portfolio-group" id="timeline-boston-university-ms">
+                <div class="portfolio-group-heading">
+                  <h3>MS - Robotics & Autonomous Systems</h3>
+                  <span class="portfolio-group-date">2025 - 2026</span>
+                </div>
+                <div class="cards-list">
+                  <article class="project-card">
+                    <div class="project-image">
+                      <img
+                        src="https://via.placeholder.com/700x500"
+                        alt="BU Project 1"
+                      />
+                    </div>
+                    <div class="project-content">
+                      <h4 class="project-title">Robotics Research Project</h4>
+                      <div class="project-tagline">
+                        Advanced robotics research and autonomous systems
+                      </div>
+                      <div class="project-description">
+                        Conducted research in autonomous systems, focusing on
+                        system integration, control algorithms, and real-world
+                        testing of robotics platforms.
+                      </div>
+                      <div class="tag-list">
+                        <span class="tag">Robotics</span>
+                        <span class="tag">Control Systems</span>
+                        <span class="tag">Research</span>
+                        <span class="tag">Python</span>
+                      </div>
+                    </div>
+                  </article>
+
+                  <article class="project-card">
+                    <div class="project-image">
+                      <img
+                        src="https://via.placeholder.com/700x500"
+                        alt="BU Project 2"
+                      />
+                    </div>
+                    <div class="project-content">
+                      <h4 class="project-title">Autonomous System Design</h4>
+                      <div class="project-tagline">
+                        Design and implementation of autonomous systems
+                      </div>
+                      <div class="project-description">
+                        Designed and built autonomous systems with emphasis on
+                        perception, planning, and execution in real-world
+                        environments.
+                      </div>
+                      <div class="tag-list">
+                        <span class="tag">ROS</span>
+                        <span class="tag">Computer Vision</span>
+                        <span class="tag">Planning</span>
+                        <span class="tag">Integration</span>
+                      </div>
+                    </div>
+                  </article>
+                </div>
+              </div>
+
+              <div class="portfolio-group" id="timeline-boston-micromachines">
+                <div class="portfolio-group-heading">
+                  <h3>Senior Product Engineer</h3>
+                  <span class="portfolio-group-date">2020 - 2025</span>
+                </div>
+                <div class="cards-list">
+                  <article class="project-card">
+                    <div class="project-image">
+                      <img
+                        src="https://via.placeholder.com/700x500"
+                        alt="BMC Project 1"
+                      />
+                    </div>
+                    <div class="project-content">
+                      <h4 class="project-title">Product Design Refresh</h4>
+                      <div class="project-tagline">
+                        Complete hardware redesign for manufacturability and
+                        cost reduction
+                      </div>
+                      <div class="project-description">
+                        Led comprehensive product redesign incorporating
+                        manufacturing feedback, cost reduction initiatives, and
+                        performance improvements. Coordinated with manufacturing
+                        and quality teams to ensure DFM compliance.
                       </div>
                       <div class="tag-list">
                         <span class="tag">SolidWorks</span>
                         <span class="tag">DFM</span>
-                        <span class="tag">Prototyping</span>
-                        <span class="tag">Testing</span>
+                        <span class="tag">Cost Reduction</span>
+                        <span class="tag">Leadership</span>
                       </div>
                     </div>
                   </article>
@@ -1085,235 +1364,221 @@
                     <div class="project-image">
                       <img
                         src="https://via.placeholder.com/700x500"
-                        alt="Project 2"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">Engineering Dashboard Tool</h4>
-                      <div class="project-tagline">
-                        A workflow tool for data entry, formatting, and document
-                        generation
-                      </div>
-                      <div class="project-description">
-                        Built a structured interface to simplify engineering
-                        workflows and reduce repetitive formatting tasks for
-                        technical documentation and reporting.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">Python</span>
-                        <span class="tag">PyQt</span>
-                        <span class="tag">Automation</span>
-                        <span class="tag">UX</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 3"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">Precision Assembly Fixture</h4>
-                      <div class="project-tagline">
-                        Fixture design focused on repeatability and production
-                        efficiency
-                      </div>
-                      <div class="project-description">
-                        Created a fixture concept that improved alignment
-                        consistency and reduced manual setup variation during
-                        assembly and verification.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">CAD</span>
-                        <span class="tag">Fixtures</span>
-                        <span class="tag">Tolerance Stackup</span>
-                        <span class="tag">Manufacturing</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              <div class="portfolio-group" id="timeline-2024">
-                <div class="portfolio-group-heading">
-                  <h3>2024</h3>
-                </div>
-
-                <div class="cards-list">
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 4"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">MEMS Product Launch Support</h4>
-                      <div class="project-tagline">
-                        Cross-functional engineering support for new product
-                        introduction
-                      </div>
-                      <div class="project-description">
-                        Supported product launch activities by coordinating
-                        design updates, documentation, and manufacturing
-                        readiness tasks across teams.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">NPI</span>
-                        <span class="tag">Documentation</span>
-                        <span class="tag">Hardware</span>
-                        <span class="tag">Cross-functional</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 5"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">Parasite Detection CNN</h4>
-                      <div class="project-tagline">
-                        Image classification model for scientific detection
-                        workflows
-                      </div>
-                      <div class="project-description">
-                        Developed a convolutional neural network pipeline to
-                        classify cell imagery and identify the presence of a
-                        parasite from image-based data.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">Python</span>
-                        <span class="tag">CNN</span>
-                        <span class="tag">Machine Learning</span>
-                        <span class="tag">Data Prep</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 6"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">Layout Geometry Analysis</h4>
-                      <div class="project-tagline">
-                        Geometric comparison and algorithmic layout evaluation
-                      </div>
-                      <div class="project-description">
-                        Built methods for comparing spatial layouts around a
-                        shared origin and evaluating geometric relationships
-                        between point sets and axes.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">Python</span>
-                        <span class="tag">Geometry</span>
-                        <span class="tag">Algorithms</span>
-                        <span class="tag">Analysis</span>
-                      </div>
-                    </div>
-                  </article>
-                </div>
-              </div>
-
-              <div class="portfolio-group" id="timeline-2023">
-                <div class="portfolio-group-heading">
-                  <h3>2023</h3>
-                </div>
-
-                <div class="cards-list">
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 7"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">DFAM Decision Tool</h4>
-                      <div class="project-tagline">
-                        Research project supporting additive manufacturing
-                        design decisions
-                      </div>
-                      <div class="project-description">
-                        Contributed to an undergraduate research effort focused
-                        on design for additive manufacturing and structured
-                        decision support for engineering use cases.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">Research</span>
-                        <span class="tag">DFAM</span>
-                        <span class="tag">Decision Tools</span>
-                        <span class="tag">Engineering</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 8"
+                        alt="BMC Project 2"
                       />
                     </div>
                     <div class="project-content">
                       <h4 class="project-title">
-                        Polygon Visualization Workflow
+                        Manufacturing Process Automation
                       </h4>
                       <div class="project-tagline">
-                        Visual plotting tools for geometric data and path
-                        handling
+                        Automation of assembly and testing workflows
                       </div>
                       <div class="project-description">
-                        Worked on visual plotting utilities for polygon-based
-                        geometry using custom point lists and origin references
-                        within a GUI workflow.
+                        Designed and implemented custom fixtures and automation
+                        solutions for assembly and testing processes, reducing
+                        cycle time and improving consistency and quality.
                       </div>
                       <div class="tag-list">
-                        <span class="tag">PyQt</span>
-                        <span class="tag">Visualization</span>
-                        <span class="tag">Geometry</span>
-                        <span class="tag">UI</span>
-                      </div>
-                    </div>
-                  </article>
-
-                  <article class="project-card">
-                    <div class="project-image">
-                      <img
-                        src="https://via.placeholder.com/700x500"
-                        alt="Project 9"
-                      />
-                    </div>
-                    <div class="project-content">
-                      <h4 class="project-title">Signal-Driven Path Transfer</h4>
-                      <div class="project-tagline">
-                        Application architecture for transferring structured
-                        path data
-                      </div>
-                      <div class="project-description">
-                        Implemented a PyQt signal-based pattern to pass
-                        structured path data between application components with
-                        better modularity and control.
-                      </div>
-                      <div class="tag-list">
-                        <span class="tag">PyQt</span>
-                        <span class="tag">Signals</span>
-                        <span class="tag">Architecture</span>
-                        <span class="tag">Python</span>
+                        <span class="tag">Fixtures</span>
+                        <span class="tag">Process Design</span>
+                        <span class="tag">Automation</span>
+                        <span class="tag">Quality</span>
                       </div>
                     </div>
                   </article>
                 </div>
+              </div>
+            </div>
+
+            <div class="portfolio-group" id="timeline-mit">
+              <div class="portfolio-group-heading">
+                <h3>Certificate - Applied Data Science</h3>
+                <span class="portfolio-group-date">2023</span>
+              </div>
+              <div class="cards-list">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://via.placeholder.com/700x500"
+                      alt="MIT Project 1"
+                    />
+                  </div>
+                  <div class="project-content">
+                    <h4 class="project-title">Data Analysis Pipeline</h4>
+                    <div class="project-tagline">
+                      Large-scale data processing and statistical analysis
+                    </div>
+                    <div class="project-description">
+                      Built end-to-end data pipeline for processing and
+                      analyzing large datasets with focus on data quality,
+                      performance optimization, and reproducibility.
+                    </div>
+                    <div class="tag-list">
+                      <span class="tag">Python</span>
+                      <span class="tag">Data Science</span>
+                      <span class="tag">Statistics</span>
+                      <span class="tag">SQL</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://via.placeholder.com/700x500"
+                      alt="MIT Project 2"
+                    />
+                  </div>
+                  <div class="project-content">
+                    <h4 class="project-title">
+                      Machine Learning Model Development
+                    </h4>
+                    <div class="project-tagline">
+                      Training and evaluating predictive models
+                    </div>
+                    <div class="project-description">
+                      Developed and validated machine learning models using
+                      various techniques including regression, classification,
+                      and ensemble methods. Focused on model performance and
+                      interpretability.
+                    </div>
+                    <div class="tag-list">
+                      <span class="tag">Machine Learning</span>
+                      <span class="tag">Python</span>
+                      <span class="tag">Scikit-learn</span>
+                      <span class="tag">Model Validation</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="portfolio-group" id="timeline-lenze-americas">
+              <div class="portfolio-group-heading">
+                <h3>Technical Solutions Engineer</h3>
+                <span class="portfolio-group-date">2018 - 2020</span>
+              </div>
+              <div class="cards-list">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://via.placeholder.com/700x500"
+                      alt="Lenze Project 1"
+                    />
+                  </div>
+                  <div class="project-content">
+                    <h4 class="project-title">
+                      Field Service & Troubleshooting
+                    </h4>
+                    <div class="project-tagline">
+                      On-site diagnosis and resolution of complex system
+                      failures
+                    </div>
+                    <div class="project-description">
+                      Provided technical support for industrial automation
+                      systems, diagnosing hardware and software issues,
+                      implementing solutions, and training customers on optimal
+                      system operation.
+                    </div>
+                    <div class="tag-list">
+                      <span class="tag">Field Service</span>
+                      <span class="tag">Troubleshooting</span>
+                      <span class="tag">VFDs</span>
+                      <span class="tag">Customer Support</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://via.placeholder.com/700x500"
+                      alt="Lenze Project 2"
+                    />
+                  </div>
+                  <div class="project-content">
+                    <h4 class="project-title">Technical Solution Design</h4>
+                    <div class="project-tagline">
+                      Custom solution engineering for customer applications
+                    </div>
+                    <div class="project-description">
+                      Engineered custom automation solutions for industrial
+                      customers, selecting components, sizing equipment, and
+                      designing integration workflows to meet specific
+                      application requirements.
+                    </div>
+                    <div class="tag-list">
+                      <span class="tag">Solution Engineering</span>
+                      <span class="tag">System Design</span>
+                      <span class="tag">Custom Applications</span>
+                      <span class="tag">Technical Specs</span>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+
+            <div class="portfolio-group" id="timeline-umass">
+              <div class="portfolio-group-heading">
+                <h3>UMass Amherst</h3>
+                <span class="portfolio-group-date">2014 - 2018</span>
+              </div>
+              <div class="cards-list">
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://via.placeholder.com/700x500"
+                      alt="UMass Project 1"
+                    />
+                  </div>
+                  <div class="project-content">
+                    <h4 class="project-title">Capstone Design Project</h4>
+                    <div class="project-tagline">
+                      Mechanical engineering capstone with real-world
+                      application
+                    </div>
+                    <div class="project-description">
+                      Led a team design project from concept through prototype,
+                      focusing on mechanical design, prototyping, testing, and
+                      iteration. Delivered a fully functional system meeting all
+                      design requirements.
+                    </div>
+                    <div class="tag-list">
+                      <span class="tag">SolidWorks</span>
+                      <span class="tag">Prototyping</span>
+                      <span class="tag">Team Leadership</span>
+                      <span class="tag">Mechanical Design</span>
+                    </div>
+                  </div>
+                </article>
+
+                <article class="project-card">
+                  <div class="project-image">
+                    <img
+                      src="https://via.placeholder.com/700x500"
+                      alt="UMass Project 2"
+                    />
+                  </div>
+                  <div class="project-content">
+                    <h4 class="project-title">Finite Element Analysis Study</h4>
+                    <div class="project-tagline">
+                      Simulation and analysis of structural components
+                    </div>
+                    <div class="project-description">
+                      Performed advanced FEA simulations on complex mechanical
+                      systems to validate designs, optimize performance, and
+                      reduce material cost while maintaining structural
+                      integrity.
+                    </div>
+                    <div class="tag-list">
+                      <span class="tag">FEA</span>
+                      <span class="tag">MATLAB</span>
+                      <span class="tag">Simulation</span>
+                      <span class="tag">ANSYS</span>
+                    </div>
+                  </div>
+                </article>
               </div>
             </div>
 
@@ -1580,7 +1845,43 @@
     </section>
 
     <footer class="site-footer">
-      <div class="site-container">© 2026 Your Name</div>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>
+            Email:
+            <a href="mailto:your.email@example.com">your.email@example.com</a>
+          </p>
+          <p>Phone: <a href="tel:+1234567890">(123) 456-7890</a></p>
+          <p>Location: Boston, MA</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Connect</h3>
+          <div class="social-links">
+            <a
+              href="https://linkedin.com/in/yourprofile"
+              target="_blank"
+              title="LinkedIn"
+              >in</a
+            >
+            <a
+              href="https://github.com/yourprofile"
+              target="_blank"
+              title="GitHub"
+              >gh</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <p><a href="#home">Home</a></p>
+          <p><a href="#skills">Skills</a></p>
+          <p><a href="#career-overview">Career</a></p>
+          <p><a href="#portfolio">Portfolio</a></p>
+        </div>
+      </div>
     </footer>
 
     <script>
