@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume | Devin Caulfield</title>
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
+  <body>
+    <div data-include="header"></div>
+
+    <main class="resume-page">
+      <div class="site-container">
+        <section class="resume-shell">
+          <div class="resume-shell-header">
+            <div>
+              <div class="hero-eyebrow">Resume</div>
+              <h1>Professional Resume</h1>
+              <p>
+                View the embedded PDF below. If the preview does not load in your browser,
+                use the direct download link.
+              </p>
+            </div>
+            <a class="btn-primary" href="resume.pdf" target="_blank">Open PDF</a>
+          </div>
+
+          <div class="resume-viewer">
+            <iframe src="resume.pdf" title="Resume PDF viewer"></iframe>
+          </div>
+
+          <div class="resume-shell-footer">
+            <p>
+              This page expects your PDF at <strong>resume.pdf</strong> in the site root.
+              If the viewer is blank, add that file and refresh the page.
+            </p>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="assets/js/include-components.js"></script>
+  </body>
+</html>
