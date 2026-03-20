@@ -25,7 +25,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Load header
   try {
-    const headerResponse = await fetch(`${basePath}assets/includes/header.html`);
+    const headerResponse = await fetch(
+      `${basePath}assets/includes/header.html`,
+    );
     const headerHTML = await headerResponse.text();
     const headerPlaceholder = document.querySelector('[data-include="header"]');
     if (headerPlaceholder) {
@@ -38,7 +40,9 @@ document.addEventListener("DOMContentLoaded", async function () {
 
   // Load footer
   try {
-    const footerResponse = await fetch(`${basePath}assets/includes/footer.html`);
+    const footerResponse = await fetch(
+      `${basePath}assets/includes/footer.html`,
+    );
     const footerHTML = await footerResponse.text();
     const footerPlaceholder = document.querySelector('[data-include="footer"]');
     if (footerPlaceholder) {
