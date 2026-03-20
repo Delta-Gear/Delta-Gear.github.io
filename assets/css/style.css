@@ -222,6 +222,18 @@ img {
   object-fit: contain;
 }
 
+.hero-skill-logo {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px;
+  min-height: 20px;
+  max-width: 20px;
+  max-height: 20px;
+  flex: 0 0 20px;
+  object-fit: contain;
+  object-position: center;
+}
+
 .hero-skill-chip span {
   color: var(--tag-text);
   font-size: 0.72rem;
