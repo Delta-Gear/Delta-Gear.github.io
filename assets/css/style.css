@@ -134,7 +134,7 @@ img {
   padding: 54px 48px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   background:
     linear-gradient(
       to bottom right,
@@ -172,6 +172,79 @@ img {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.hero-skills {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px solid rgba(90, 82, 74, 0.22);
+  display: grid;
+  gap: 4px;
+}
+
+.hero-skills-row {
+  display: grid;
+  gap: 0;
+}
+
+.hero-skills-row-title {
+  margin: 0;
+  font-size: 0.72rem;
+  line-height: 1;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero-skills-row-chips {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  gap: 8px;
+}
+
+.hero-skill-chip {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 8px;
+  border-radius: 12px;
+  background: var(--tag-bg);
+  border: 1px solid rgba(90, 82, 74, 0.16);
+  width: fit-content;
+  max-width: 100%;
+}
+
+.hero-skill-chip img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+.hero-skill-chip span {
+  color: var(--tag-text);
+  font-size: 0.72rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+/* Keep hero skill heading scale and spacing stable against broader cascade rules */
+.hero-content .hero-skills .hero-skills-row-title {
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 0.75rem !important;
+  line-height: 0.88 !important;
+  letter-spacing: 0.28px !important;
+}
+
+.hero-content .hero-skills .hero-skills-row {
+  gap: 0 !important;
+}
+
+.hero-content .hero-skills .hero-skills-row-chips {
+  margin-top: 5px !important;
+  margin-bottom: 10px !important;
 }
 
 .btn-primary,
@@ -982,6 +1055,29 @@ img {
 
   .hero-content {
     padding: 34px 24px;
+  }
+
+  .hero-skills {
+    margin-top: auto;
+    padding-top: 14px;
+  }
+
+  .hero-skills-row-title {
+    font-size: 0.66rem;
+    letter-spacing: 0.3px;
+  }
+
+  .hero-content .hero-skills .hero-skills-row-title {
+    font-size: 0.6rem !important;
+    letter-spacing: 0.24px !important;
+  }
+
+  .hero-content .hero-skills .hero-skills-row-chips {
+    margin-top: 0px !important;
+  }
+
+  .hero-skill-chip span {
+    font-size: 0.72rem;
   }
 
   .skills-grid {
