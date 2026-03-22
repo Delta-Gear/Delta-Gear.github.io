@@ -10,72 +10,137 @@
     <div data-include="header"></div>
 
     <main>
-      <section class="hero-section">
+      <!-- PROJECT CARD WITH EXPERIENCE/EDUCATION SIDEBAR -->
+      <section class="project-metadata-section">
         <div class="site-container">
-          <div class="hero-card">
-            <div class="hero-image">
-              <img src="images/hero.jpg" alt="DFAM Decision Tool" />
+          <div class="project-metadata-layout">
+            <!-- PROJECT CARD -->
+            <div class="project-metadata-card">
+              <article class="project-card" id="project-card">
+                <div class="project-image">
+                  <img
+                    src="images/Graph.png"
+                    alt="DFAM Decision Tool"
+                  />
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">Design for Manufacturing Decision Tool</h4>
+                  <div class="project-tagline">
+                    Quanitify and compare the benefit/risk of Additive Manufacturing.
+                  </div>
+                  <div class="project-description">
+                    Developed a robust, holistic Data Visualization Application to enable
+                    early prediction of ideal manufacturing processes depending on quantity by
+                    utilizing research of Cost-Benefit Analysis, QFD, & DFMA. Deployed at
+                    Raytheon.
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Additive Manufacturing</span>
+                    <span class="tag">GUI</span>
+                    <span class="tag">Cost Analysis</span>
+                    <span class="tag">DFMA</span>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="hero-content">
-              <div class="hero-eyebrow">Design Tool</div>
-              <h1>Design for Additive Manufacturing Decision Tool</h1>
-              <p>
-                Development of an interactive tool to guide designers through
-                design for additive manufacturing (DfAM) considerations in early
-                design phases.
-              </p>
-              <div class="hero-buttons">
-                <a href="../../index.html#portfolio" class="btn-primary"
-                  >Back to Portfolio</a
-                >
-              </div>
+
+            <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
+            <div class="project-experience-card">
+              <strong>University of Massachusetts Amherst</strong>
+              <div class="role">B.S. Mechanical Engineering</div>
+              <time>2014 - 2018</time>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- PROJECT DETAILS -->
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
             <h2>Overview</h2>
-            <p>
-              Development of a decision support tool to help engineers evaluate
-              whether additive manufacturing is appropriate for their design and
-              identify optimization opportunities.
-            </p>
+                                    <p>
+                                      Development of a decision support tool to help engineers evaluate
+                                      whether additive manufacturing is appropriate for their design and
+                                      identify optimization opportunities.
+                                    </p>
 
-            <h2>Problem Statement</h2>
-            <p>
-              Engineers often lack systematic guidance for evaluating additive
-              manufacturing suitability early in design. Challenge: create a
-              tool that captures domain expertise and guides decision-making.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Problem Statement</h2>
+                                        <p>
+                                          Engineers often lack systematic guidance for evaluating additive
+                                          manufacturing suitability early in design. Challenge: create a
+                                          tool that captures domain expertise and guides decision-making.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/flow-chart.png" alt="Problem Statement" />
+              </div>
+            </div>
 
-            <h2>Solution & Approach</h2>
-            <p>
-              Developed an interactive decision tree tool incorporating domain
-              expertise from manufacturing specialists. The tool evaluates
-              geometry, materials, performance requirements, and cost.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Solution & Approach</h2>
+                                        <p>
+                                          Developed an interactive decision tree tool incorporating domain
+                                          expertise from manufacturing specialists. The tool evaluates
+                                          geometry, materials, performance requirements, and cost.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/Graph.png" alt="Solution & Approach" />
+              </div>
+            </div>
 
-            <h2>Results & Outcomes</h2>
-            <p>
-              Successfully created a tool that designers use to systematically
-              evaluate AM suitability and identify design optimizations.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Results & Outcomes</h2>
+                                        <p>
+                                          Successfully created a tool that designers use to systematically
+                                          evaluate AM suitability and identify design optimizations.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/GUI.png" alt="Results & Outcomes" />
+              </div>
+            </div>
 
-            <h2>Key Learnings</h2>
-            <p>
-              Capturing complex domain expertise in an accessible tool requires
-              deep collaboration between engineers and tool developers. User
-              testing revealed important gaps in initial assumptions.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Key Learnings</h2>
+                                        <p>
+                                          Capturing complex domain expertise in an accessible tool requires
+                                          deep collaboration between engineers and tool developers. User
+                                          testing revealed important gaps in initial assumptions.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/Haptic House.png" alt="Key Learnings" />
+              </div>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <!-- EXPLORE OTHER PROJECTS -->
+      <section class="explore-projects-section">
+        <div class="site-container">
+          <h2>
+            <a href="../../index.html#portfolio">Explore Other Projects</a>
+          </h2>
+          <div class="explore-projects-grid" id="explore-projects-grid">
+            <!-- PROJECT CARDS LOADED HERE -->
+          </div>
         </div>
       </section>
     </main>
 
     <div data-include="footer"></div>
+
     <script src="../../assets/js/include-components.js"></script>
+    <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
+
