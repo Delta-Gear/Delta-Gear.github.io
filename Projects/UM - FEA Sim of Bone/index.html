@@ -18,10 +18,7 @@
             <div class="project-metadata-card">
               <article class="project-card" id="project-card">
                 <div class="project-image">
-                  <img
-                    src="images/Overview.png"
-                    alt="FEA Simulation"
-                  />
+                  <img src="images/Overview.png" alt="FEA Simulation" />
                 </div>
                 <div class="project-content">
                   <h4 class="project-title">
@@ -31,8 +28,9 @@
                     FEA Simulation of Stress Fractures in Bone
                   </div>
                   <div class="project-description">
-                    Utilized ANSYS to generate a viscoelastic model of human tibia to analyze
-                    effects of running gait on stress fractures.
+                    Utilized ANSYS to generate a viscoelastic model of human
+                    tibia to analyze effects of running gait on stress
+                    fractures.
                   </div>
                   <div class="tag-list">
                     <span class="tag">FEA</span>
@@ -59,65 +57,52 @@
         <div class="site-container">
           <article class="article-content">
             <h2>Overview</h2>
-                                    <p>
-                                      Comprehensive biomechanical analysis using finite element modeling
-                                      to understand bone behavior under loading conditions for medical
-                                      device design.
-                                    </p>
+            <p>
+              The biomechanics and load conditions while running can vary wildly
+              depending on the runner's style of gait. This project analyzes if
+              these different loading conditions contribute to stress fractures
+              in the tibia through Finite Element Analysis (FEA) simulations.
+            </p>
 
             <div class="blog-row">
-              <div class="blog-text">
-                <h2>Problem Statement</h2>
-                                        <p>
-                                          Medical device designers need to understand how devices interact
-                                          with bone structures under various loading conditions. Challenge:
-                                          develop accurate FEA models capturing bone behavior.
-                                        </p>
+              <div class="blog-image">
+                <img src="images/Forefoot.gif" alt="Forefoot Gait Analysis" />
               </div>
               <div class="blog-image">
-                <img src="images/Forefoot.gif" alt="Problem Statement" />
-              </div>
-            </div>
-
-            <div class="blog-row blog-row-reverse">
-              <div class="blog-text">
-                <h2>Solution & Approach</h2>
-                                        <p>
-                                          Performed FEA analysis using CT scan data for geometry, material
-                                          properties from literature, and realistic loading conditions based
-                                          on biomechanical research.
-                                        </p>
-              </div>
-              <div class="blog-image">
-                <img src="images/Heel.gif" alt="Solution & Approach" />
+                <img src="images/Heel.gif" alt="Heel Gait Analysis" />
               </div>
             </div>
 
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Results & Outcomes</h2>
-                                        <p>
-                                          Successfully provided design insights enabling optimization of
-                                          medical devices for better load distribution and reduced failure
-                                          risk.
-                                        </p>
+                <h2>FEA Simulation</h2>
+                <p>
+                  With ANSYS, simulated the tibia with a multi-material
+                  viscoelastic model, applying different material properties for
+                  the cortical and concellous bone. Modeled different loading
+                  conditions for the heel vs forefoot strike.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/Overview.png" alt="Results & Outcomes" />
+                <img src="images/FEA.png" alt="FEA Simulation Overview" />
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
               <div class="blog-text">
-                <h2>Key Learnings</h2>
-                                        <p>
-                                          Biomechanical FEA requires accurate material models and realistic
-                                          boundary conditions. Validation against experimental data is
-                                          critical for confidence in results.
-                                        </p>
+                <h2>Results</h2>
+                <p>
+                  Heel Strike had higher impluse forces than forefoot strike,
+                  causing significantly greater Equivalent Stress and fatigue on
+                  the tibia over 10,000 loading cycles. Notably, this was still
+                  not high enough to cause a stress fracture.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/Forefoot.gif" alt="Key Learnings" />
+                <img
+                  src="images/Heel_eq.gif"
+                  alt="Heel Strike Equivalent Stress"
+                />
               </div>
             </div>
           </article>
@@ -143,4 +128,3 @@
     <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
-
