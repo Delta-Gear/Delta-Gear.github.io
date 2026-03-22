@@ -3,6 +3,44 @@ document.addEventListener("DOMContentLoaded", async function () {
   const isProjectPage = window.location.pathname.includes("/Projects/");
   const basePath = isProjectPage ? "../../" : "";
 
+  function rewriteProjectPaths(html) {
+    return html.replace(
+      /(\b(?:src|href)=["'])Projects\//g,
+      "$1../../Projects/",
+    );
+  }
+
+  async function loadInlineIncludes() {
+    const includeTargets = document.querySelectorAll("[data-include-path]");
+
+    for (const target of includeTargets) {
+      const includePath = target.dataset.includePath;
+
+      if (!includePath) {
+        continue;
+      }
+
+      try {
+        const response = await fetch(includePath);
+
+        if (!response.ok) {
+          console.error(`Error loading include: ${includePath}`);
+          continue;
+        }
+
+        let includeHTML = await response.text();
+
+        if (target.dataset.rewriteProjectPaths === "true") {
+          includeHTML = rewriteProjectPaths(includeHTML);
+        }
+
+        target.outerHTML = includeHTML;
+      } catch (error) {
+        console.error(`Error loading include ${includePath}:`, error);
+      }
+    }
+  }
+
   function applySharedAssetPaths(scope) {
     if (!scope) {
       return;
@@ -66,4 +104,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   } catch (error) {
     console.error("Error loading footer:", error);
   }
+
+  // Load page-level partials (for example, project card snippets)
+  await loadInlineIncludes();
 });
