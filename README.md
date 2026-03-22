@@ -1,66 +1,108 @@
 # Devin Caulfield Portfolio
 
-Personal portfolio site showcasing robotics, AI, and product development work.
+Personal portfolio site showcasing robotics, AI, and product development work. Hosted at [delta-gear.github.io](https://delta-gear.github.io).
+
+## Projects
+
+### BMC (Boston Medical Components)
+
+- Kilo Redesign - Product redesign for medical device
+- Retinal Imaging Machine - Optical imaging system
+
+### BU (Boston University)
+
+- Med Robot - Haptic End Effector - Surgical robotics haptic feedback
+- PolyFueler - Alternative fuel system
+- Robotic Pose Estimation AI - AI-powered pose detection
+- WIPERS - Smart wiping system
+
+### DC (Design Collective)
+
+- Kaleidoscope Lamp - Interactive lighting installation
+- Ouija - Experimental design project
+
+### Lenze
+
+- Lenze - Industrial automation project
+
+### MIT (Massachusetts Institute of Technology)
+
+- Google Streetview - Computer vision application
+- Malaria Detection - Medical imaging and AI
+
+### UMass
+
+- DFAM Decision Tool - Design decision support system
+- FEA Simulation of Bone - Finite element analysis
+- Particulate Mask - Respiratory protection design
 
 ## Tech Stack
 
 - Static HTML, CSS, and JavaScript
-- Shared header/footer components loaded client-side
+- Shared header/footer components loaded client-side via `fetch`
 - Per-project pages with reusable card snippets
+- Responsive grid layouts with CSS custom properties
 
-## Project Structure
+## Architecture
+
+### File Structure
 
 ```
 .
-|- index.html
+|- index.html (Home Page)
 |- about.html
 |- resume.html
 |- assets/
+|  |- resume.pdf
 |  |- css/style.css
-|  |- includes/header.html
-|  |- includes/footer.html
-|  `- js/include-components.js
+|  |- images/
+|  |- includes/
+|  |  |- header.html
+|  |  `- footer.html
+|  `- js/
+|     |- include-components.js
+|     `- project-navigation.js
 |- Projects/
-|  `- <Project Name>/
+|  `- [Project Name]/
 |     |- index.html
 |     |- card.html
 |     `- images/
 `- templates/
-	 `- project-template.html
+   `- project-template.html
 ```
 
-## Local Development
+### How It Works
 
-Because shared components and cards are loaded with `fetch`, run the site from a local web server instead of opening files directly.
+- **Home Page** (`index.html`) contains card-list containers using `data-project-cards` attributes
+- **Project Navigation Script** (`project-navigation.js`) dynamically fetches each `Projects/[Project Name]/card.html` and injects into the grid
+- **Card Clicks** route to `Projects/[Project Name]/index.html` with full project details
+- **Shared Components** (header/footer) are loaded client-side via `include-components.js`
 
-PowerShell example:
+### Project Page Template
 
-```powershell
-python -m http.server 8000
+Each project page follows a consistent structure:
+
+1. **Metadata Section** - Project overview with key details and experience sidebar
+2. **Article Section** - Main content in alternating blog-row layout (text + paired images)
+3. **Explore Section** - Grid of other projects with navigation
+
+### Shared Component Placeholders
+
+```html
+<div data-include="header"></div>
+<div data-include="footer"></div>
 ```
 
-Then open:
+Include the component loader script before `</body>`:
 
-`http://localhost:8000`
-
-## How Project Cards Work
-
-- `index.html` contains card-list containers using `data-project-cards`.
-- JavaScript fetches each `Projects/<Project Name>/card.html` and injects it into the list.
-- Clicking a loaded card routes to `Projects/<Project Name>/index.html`.
+- Root pages: `<script src="assets/js/include-components.js"></script>`
+- Project pages: `<script src="../../assets/js/include-components.js"></script>`
 
 ## Adding a New Project
 
-1. Create `Projects/<Project Name>/index.html`.
-2. Create `Projects/<Project Name>/card.html`.
-3. Add images under `Projects/<Project Name>/images/`.
-4. Add the project folder name to the appropriate `data-project-cards` list in `index.html`.
-
-## Notes
-
-- Shared header/footer placeholders:
-  - `<div data-include="header"></div>`
-  - `<div data-include="footer"></div>`
-- Include component loader before `</body>`:
-  - `<script src="assets/js/include-components.js"></script>` (root pages)
-  - `<script src="../../assets/js/include-components.js"></script>` (project pages)
+1. Create `Projects/[Project Name]/` folder
+2. Add `index.html` (use project-template.html as reference)
+3. Add `card.html` (project summary with metadata)
+4. Add images to `Projects/[Project Name]/images/`
+5. Add project folder name to appropriate `data-project-cards` list in `index.html`
+6. Update this README with the new project link
