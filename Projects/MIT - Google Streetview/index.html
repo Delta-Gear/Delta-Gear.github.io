@@ -10,71 +10,134 @@
     <div data-include="header"></div>
 
     <main>
-      <section class="hero-section">
+      <!-- PROJECT CARD WITH EXPERIENCE/EDUCATION SIDEBAR -->
+      <section class="project-metadata-section">
         <div class="site-container">
-          <div class="hero-card">
-            <div class="hero-image">
-              <img src="images/hero.jpg" alt="Google Streetview AI" />
+          <div class="project-metadata-layout">
+            <!-- PROJECT CARD -->
+            <div class="project-metadata-card">
+              <article class="project-card" id="project-card">
+                <div class="project-image">
+                  <img
+                    src="images/data.png"
+                    alt="Google Streetview"
+                  />
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">Streetview Numerical Recognition A.I.</h4>
+                  <div class="project-tagline">
+                    Extract numbers from Google Streetview images.
+                  </div>
+                  <div class="project-description">
+                    Optimized nueral network to identify and classify numbers from database of
+                    road images and street signs.
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag">Computer Vision</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">AI - CNN</span>
+                    <span class="tag">Data Science</span>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="hero-content">
-              <div class="hero-eyebrow">Computer Vision</div>
-              <h1>Google Streetview Image Analysis</h1>
-              <p>
-                Development of machine learning models for analyzing large-scale
-                Google Streetview imagery to extract urban planning insights.
-              </p>
-              <div class="hero-buttons">
-                <a href="../../index.html#portfolio" class="btn-primary"
-                  >Back to Portfolio</a
-                >
-              </div>
+
+            <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
+            <div class="project-experience-card">
+              <strong>Massachusetts Institute of Technology</strong>
+              <div class="role">Applied Data Science Certificate</div>
+              <time>2023</time>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- PROJECT DETAILS -->
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
             <h2>Overview</h2>
-            <p>
-              Development of machine learning pipelines to process and analyze
-              massive quantities of Google Streetview imagery for urban planning
-              applications.
-            </p>
+                                    <p>
+                                      Development of machine learning pipelines to process and analyze
+                                      massive quantities of Google Streetview imagery for urban planning
+                                      applications.
+                                    </p>
 
-            <h2>Problem Statement</h2>
-            <p>
-              Large-scale image analysis requires robust computer vision models
-              handling variations in lighting, perspective, and image quality.
-              Challenge: build scalable models for real-world analysis.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Problem Statement</h2>
+                                        <p>
+                                          Large-scale image analysis requires robust computer vision models
+                                          handling variations in lighting, perspective, and image quality.
+                                          Challenge: build scalable models for real-world analysis.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/d" alt="Problem Statement" />
+              </div>
+            </div>
 
-            <h2>Solution & Approach</h2>
-            <p>
-              Implemented deep learning models for object detection and scene
-              understanding using transfer learning and data augmentation
-              techniques.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Solution & Approach</h2>
+                                        <p>
+                                          Implemented deep learning models for object detection and scene
+                                          understanding using transfer learning and data augmentation
+                                          techniques.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/d" alt="Solution & Approach" />
+              </div>
+            </div>
 
-            <h2>Results & Outcomes</h2>
-            <p>
-              Successfully developed models capable of analyzing large-scale
-              imagery and extracting useful insights for urban planning.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Results & Outcomes</h2>
+                                        <p>
+                                          Successfully developed models capable of analyzing large-scale
+                                          imagery and extracting useful insights for urban planning.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/d" alt="Results & Outcomes" />
+              </div>
+            </div>
 
-            <h2>Key Learnings</h2>
-            <p>
-              Real-world data revealed the importance of preprocessing, data
-              validation, and understanding domain-specific challenges in
-              computer vision.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Key Learnings</h2>
+                                        <p>
+                                          Real-world data revealed the importance of preprocessing, data
+                                          validation, and understanding domain-specific challenges in
+                                          computer vision.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/d" alt="Key Learnings" />
+              </div>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <!-- EXPLORE OTHER PROJECTS -->
+      <section class="explore-projects-section">
+        <div class="site-container">
+          <h2>
+            <a href="../../index.html#portfolio">Explore Other Projects</a>
+          </h2>
+          <div class="explore-projects-grid" id="explore-projects-grid">
+            <!-- PROJECT CARDS LOADED HERE -->
+          </div>
         </div>
       </section>
     </main>
 
     <div data-include="footer"></div>
+
     <script src="../../assets/js/include-components.js"></script>
+    <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
+

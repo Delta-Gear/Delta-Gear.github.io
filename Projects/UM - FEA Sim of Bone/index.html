@@ -10,73 +10,137 @@
     <div data-include="header"></div>
 
     <main>
-      <section class="hero-section">
+      <!-- PROJECT CARD WITH EXPERIENCE/EDUCATION SIDEBAR -->
+      <section class="project-metadata-section">
         <div class="site-container">
-          <div class="hero-card">
-            <div class="hero-image">
-              <img src="images/hero.jpg" alt="FEA Simulation of Bone" />
+          <div class="project-metadata-layout">
+            <!-- PROJECT CARD -->
+            <div class="project-metadata-card">
+              <article class="project-card" id="project-card">
+                <div class="project-image">
+                  <img
+                    src="images/Overview.png"
+                    alt="FEA Simulation"
+                  />
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">
+                    Fatigue and Biomechanic Analysis of Running Gait
+                  </h4>
+                  <div class="project-tagline">
+                    FEA Simulation of Stress Fractures in Bone
+                  </div>
+                  <div class="project-description">
+                    Utilized ANSYS to generate a viscoelastic model of human tibia to analyze
+                    effects of running gait on stress fractures.
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag">FEA</span>
+                    <span class="tag">ANSYS</span>
+                    <span class="tag">Simulation</span>
+                    <span class="tag">Biomechanics</span>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="hero-content">
-              <div class="hero-eyebrow">Structural Analysis</div>
-              <h1>Finite Element Analysis of Bone Structures</h1>
-              <p>
-                Biomechanical analysis of bone structures using FEA to
-                understand load distribution and failure modes for medical
-                device design applications.
-              </p>
-              <div class="hero-buttons">
-                <a href="../../index.html#portfolio" class="btn-primary"
-                  >Back to Portfolio</a
-                >
-              </div>
+
+            <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
+            <div class="project-experience-card">
+              <strong>University of Massachusetts Amherst</strong>
+              <div class="role">B.S. Mechanical Engineering</div>
+              <time>2014 - 2018</time>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- PROJECT DETAILS -->
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
             <h2>Overview</h2>
-            <p>
-              Comprehensive biomechanical analysis using finite element modeling
-              to understand bone behavior under loading conditions for medical
-              device design.
-            </p>
+                                    <p>
+                                      Comprehensive biomechanical analysis using finite element modeling
+                                      to understand bone behavior under loading conditions for medical
+                                      device design.
+                                    </p>
 
-            <h2>Problem Statement</h2>
-            <p>
-              Medical device designers need to understand how devices interact
-              with bone structures under various loading conditions. Challenge:
-              develop accurate FEA models capturing bone behavior.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Problem Statement</h2>
+                                        <p>
+                                          Medical device designers need to understand how devices interact
+                                          with bone structures under various loading conditions. Challenge:
+                                          develop accurate FEA models capturing bone behavior.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/Forefoot.gif" alt="Problem Statement" />
+              </div>
+            </div>
 
-            <h2>Solution & Approach</h2>
-            <p>
-              Performed FEA analysis using CT scan data for geometry, material
-              properties from literature, and realistic loading conditions based
-              on biomechanical research.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Solution & Approach</h2>
+                                        <p>
+                                          Performed FEA analysis using CT scan data for geometry, material
+                                          properties from literature, and realistic loading conditions based
+                                          on biomechanical research.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/Heel.gif" alt="Solution & Approach" />
+              </div>
+            </div>
 
-            <h2>Results & Outcomes</h2>
-            <p>
-              Successfully provided design insights enabling optimization of
-              medical devices for better load distribution and reduced failure
-              risk.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Results & Outcomes</h2>
+                                        <p>
+                                          Successfully provided design insights enabling optimization of
+                                          medical devices for better load distribution and reduced failure
+                                          risk.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/Overview.png" alt="Results & Outcomes" />
+              </div>
+            </div>
 
-            <h2>Key Learnings</h2>
-            <p>
-              Biomechanical FEA requires accurate material models and realistic
-              boundary conditions. Validation against experimental data is
-              critical for confidence in results.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Key Learnings</h2>
+                                        <p>
+                                          Biomechanical FEA requires accurate material models and realistic
+                                          boundary conditions. Validation against experimental data is
+                                          critical for confidence in results.
+                                        </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/Forefoot.gif" alt="Key Learnings" />
+              </div>
+            </div>
           </article>
+        </div>
+      </section>
+
+      <!-- EXPLORE OTHER PROJECTS -->
+      <section class="explore-projects-section">
+        <div class="site-container">
+          <h2>
+            <a href="../../index.html#portfolio">Explore Other Projects</a>
+          </h2>
+          <div class="explore-projects-grid" id="explore-projects-grid">
+            <!-- PROJECT CARDS LOADED HERE -->
+          </div>
         </div>
       </section>
     </main>
 
     <div data-include="footer"></div>
+
     <script src="../../assets/js/include-components.js"></script>
+    <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
+
