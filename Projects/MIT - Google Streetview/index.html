@@ -16,7 +16,10 @@
           <div class="project-metadata-layout">
             <!-- PROJECT CARD -->
             <div class="project-metadata-card">
-              <div data-include-path="card.html" data-rewrite-project-paths="true"></div>
+              <div
+                data-include-path="card.html"
+                data-rewrite-project-paths="true"
+              ></div>
             </div>
 
             <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
@@ -33,65 +36,58 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>Overview</h2>
-                                    <p>
-                                      Development of machine learning pipelines to process and analyze
-                                      massive quantities of Google Streetview imagery for urban planning
-                                      applications.
-                                    </p>
-
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Problem Statement</h2>
-                                        <p>
-                                          Large-scale image analysis requires robust computer vision models
-                                          handling variations in lighting, perspective, and image quality.
-                                          Challenge: build scalable models for real-world analysis.
-                                        </p>
+                <h2>Overview</h2>
+                <p>
+                  Developed a classification Convolutional Neural Network (CNN)
+                  to detect and classify images of numbers. Utilized 600,000
+                  real-world images collected by the Street View House Number
+                  (SVHN) dataset.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/d" alt="Problem Statement" />
+                <img
+                  src="images/data.png"
+                  alt="SVHN Dataset Samples"
+                  style="width: 80%; margin: 0 auto; display: block"
+                />
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
               <div class="blog-text">
-                <h2>Solution & Approach</h2>
-                                        <p>
-                                          Implemented deep learning models for object detection and scene
-                                          understanding using transfer learning and data augmentation
-                                          techniques.
-                                        </p>
+                <h2>Model Architecture</h2>
+                <p>
+                  Utilized Python and TensorFlow to build a CNN model that
+                  included Batch Normalization and Dropout layers to improve
+                  accuracy while preventing overfitting.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/d" alt="Solution & Approach" />
+                <img
+                  src="images/accuracy.png"
+                  alt="Accuracy vs Epoch"
+                  style="width: 80%; margin: 0 auto; display: block"
+                />
               </div>
             </div>
 
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Results & Outcomes</h2>
-                                        <p>
-                                          Successfully developed models capable of analyzing large-scale
-                                          imagery and extracting useful insights for urban planning.
-                                        </p>
+                <h2>Results</h2>
+                <p>Model achieved 91% accuracy on the test dataset.</p>
+                <p>
+                  Shown here is the confusion matrix to analyze which digits
+                  were most commonly misclassified.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/d" alt="Results & Outcomes" />
-              </div>
-            </div>
-
-            <div class="blog-row blog-row-reverse">
-              <div class="blog-text">
-                <h2>Key Learnings</h2>
-                                        <p>
-                                          Real-world data revealed the importance of preprocessing, data
-                                          validation, and understanding domain-specific challenges in
-                                          computer vision.
-                                        </p>
-              </div>
-              <div class="blog-image">
-                <img src="images/d" alt="Key Learnings" />
+                <img
+                  src="images/confusion matrix.png"
+                  alt="Confusion Matrix"
+                  style="width: 80%; margin: 0 auto; display: block"
+                />
               </div>
             </div>
           </article>
@@ -117,4 +113,3 @@
     <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
-
