@@ -3,78 +3,201 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>WIPERS | Devin Caulfield</title>
+    <title>WIPERs | Devin Caulfield</title>
     <link rel="stylesheet" href="../../assets/css/style.css" />
   </head>
   <body>
     <div data-include="header"></div>
 
     <main>
-      <section class="hero-section">
+      <!-- PROJECT CARD WITH EXPERIENCE/EDUCATION SIDEBAR -->
+      <section class="project-metadata-section">
         <div class="site-container">
-          <div class="hero-card">
-            <div class="hero-image">
-              <img src="images/hero.jpg" alt="WIPERS" />
+          <div class="project-metadata-layout">
+            <!-- PROJECT CARD -->
+            <div class="project-metadata-card">
+              <article class="project-card">
+                <div class="project-image">
+                  <img
+                    src="images/stitched.png"
+                    alt="WIPERs Multi-Robot System"
+                  />
+                </div>
+                <div class="project-content">
+                  <h4 class="project-title">WIPERs</h4>
+                  <div class="project-tagline">
+                    Wireless Ink Purging Robot Ensemble
+                  </div>
+                  <div class="project-description">
+                    Created and built multi-robot system to autonomously erase
+                    magnetic whiteboards simultaneously. Implemented convergence
+                    path planning algorithms and perception driven task
+                    allocation.
+                  </div>
+                  <div class="tag-list">
+                    <span class="tag">Robotics</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Simulation</span>
+                    <span class="tag">Multi-Robot System</span>
+                    <span class="tag">Task Allocation</span>
+                  </div>
+                </div>
+              </article>
             </div>
-            <div class="hero-content">
-              <div class="hero-eyebrow">Robotics Project</div>
-              <h1>WIPERS - Autonomous System</h1>
-              <p>
-                Development of an autonomous robotic system focused on
-                perception, planning, and control integration in dynamic
-                environments.
-              </p>
-              <div class="hero-buttons">
-                <a href="../../index.html#portfolio" class="btn-primary"
-                  >Back to Portfolio</a
-                >
-              </div>
+
+            <!-- EDUCATION CARD (Right-justified) -->
+            <div class="project-experience-card">
+              <strong>Boston University</strong>
+              <div class="role">M.S. Robotics & Autonomous Systems</div>
+              <time>2025 - 2026</time>
             </div>
           </div>
         </div>
       </section>
 
+      <!-- PROJECT DETAILS WITH BLOG-STYLE LAYOUT -->
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
             <h2>Overview</h2>
             <p>
-              WIPERS is an autonomous robotic system integrating computer
-              vision, motion planning, and real-time control for autonomous
-              operation.
+              WIPERS is a multi-robot autonomous system designed to coordinate
+              multiple robots for simultaneous task execution. The system
+              integrates computer vision for whiteboard detection, motion
+              planning for convergence paths, and real-time communication for
+              task allocation among robots.
             </p>
 
-            <h2>Problem Statement</h2>
-            <p>
-              Autonomous systems require robust integration of perception,
-              planning, and control. Challenge: develop a system that handles
-              uncertain environments reliably.
-            </p>
+            <!-- BLOG SECTION WITH TEXT AND IMAGE -->
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Challenge & Problem Statement</h2>
+                <p>
+                  The challenge was to develop an autonomous multi-robot system
+                  capable of efficiently coordinating to erase magnetic
+                  whiteboards simultaneously. Key difficulties included:
+                </p>
+                <ul>
+                  <li>
+                    Coordinating multiple robots without centralized control
+                  </li>
+                  <li>
+                    Implementing robust whiteboard detection and path planning
+                  </li>
+                  <li>Handling dynamic environments and collision avoidance</li>
+                  <li>
+                    Ensuring task allocation is fair and efficient across robots
+                  </li>
+                </ul>
+              </div>
+              <div class="blog-image">
+                <img src="images/hero.jpg" alt="Problem context" />
+              </div>
+            </div>
 
-            <h2>Solution & Approach</h2>
-            <p>
-              Integrated ROS-based architecture combining sensor fusion, path
-              planning algorithms, and control systems for autonomous navigation
-              and manipulation.
-            </p>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Solution & Approach</h2>
+                <p>
+                  We developed an integrated ROS-based architecture that
+                  combines:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Perception:</strong> Computer vision algorithms for
+                    whiteboard detection and localization
+                  </li>
+                  <li>
+                    <strong>Path Planning:</strong> Convergence algorithms
+                    ensuring robots meet at optimal points
+                  </li>
+                  <li>
+                    <strong>Task Allocation:</strong> Distributed task
+                    allocation based on robot proximity and availability
+                  </li>
+                  <li>
+                    <strong>Control:</strong> Real-time motor control and
+                    feedback loops for accurate execution
+                  </li>
+                </ul>
+                <p>
+                  The system uses Python with ROS for middleware communication
+                  and MATLAB Simulink for validation and testing.
+                </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/hero.jpg" alt="Solution implementation" />
+              </div>
+            </div>
 
-            <h2>Results & Outcomes</h2>
-            <p>
-              Successfully demonstrated reliable autonomous operation with
-              adaptive behavior in dynamic environments.
-            </p>
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Results & Outcomes</h2>
+                <p>The system successfully demonstrated:</p>
+                <ul>
+                  <li>Multi-robot coordination without collision</li>
+                  <li>Reliable whiteboard detection and erasure</li>
+                  <li>
+                    Adaptive behavior in varying lighting and board conditions
+                  </li>
+                  <li>
+                    Scalability to additional robots with minimal
+                    reconfiguration
+                  </li>
+                </ul>
+                <p>
+                  The implementation validated the efficiency of distributed
+                  task allocation and established a foundation for future
+                  autonomous multi-robot systems.
+                </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/hero.jpg" alt="Project results" />
+              </div>
+            </div>
 
             <h2>Key Learnings</h2>
-            <p>
-              Real-world systems require extensive validation. Graceful error
-              handling and recovery are as important as nominal operation.
-            </p>
+            <ul>
+              <li>
+                Distributed algorithms are essential for scalable autonomous
+                systems
+              </li>
+              <li>
+                Robust error handling and recovery mechanisms are critical in
+                real-world deployment
+              </li>
+              <li>
+                Extensive simulation and testing reduce field deployment time
+              </li>
+              <li>
+                Clear communication protocols between robots are fundamental to
+                coordination
+              </li>
+              <li>
+                Graceful degradation—ensuring systems function even when
+                components fail—is as important as nominal operation
+              </li>
+            </ul>
           </article>
+        </div>
+      </section>
+
+      <!-- EXPLORE OTHER PROJECTS -->
+      <section class="explore-projects-section">
+        <div class="site-container">
+          <h2>
+            <a href="../../index.html#portfolio">Explore Other Projects</a>
+          </h2>
+          <div class="explore-projects-grid" id="explore-projects-grid">
+            <!-- PROJECT CARDS LOADED HERE -->
+          </div>
         </div>
       </section>
     </main>
 
     <div data-include="footer"></div>
+
     <script src="../../assets/js/include-components.js"></script>
+    <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
