@@ -3,6 +3,16 @@ document.addEventListener("DOMContentLoaded", async function () {
   const isProjectPage = window.location.pathname.includes("/Projects/");
   const basePath = isProjectPage ? "../../" : "";
 
+  function applySharedAssetPaths(scope) {
+    if (!scope) {
+      return;
+    }
+
+    scope.querySelectorAll("[data-shared-src]").forEach((element) => {
+      element.setAttribute("src", `${basePath}${element.dataset.sharedSrc}`);
+    });
+  }
+
   function applySharedNavLinks(scope) {
     if (!scope) {
       return;
@@ -10,8 +20,10 @@ document.addEventListener("DOMContentLoaded", async function () {
 
     const targets = {
       home: `${basePath}index.html`,
+      about: `${basePath}about.html`,
       career: `${basePath}index.html#career-overview`,
       projects: `${basePath}index.html#portfolio`,
+      skills: `${basePath}index.html#skills`,
       resume: `${basePath}resume.html`,
     };
 
@@ -32,6 +44,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     const headerPlaceholder = document.querySelector('[data-include="header"]');
     if (headerPlaceholder) {
       headerPlaceholder.outerHTML = headerHTML;
+      applySharedAssetPaths(document.querySelector(".site-header"));
       applySharedNavLinks(document.querySelector(".site-header"));
     }
   } catch (error) {
@@ -47,6 +60,8 @@ document.addEventListener("DOMContentLoaded", async function () {
     const footerPlaceholder = document.querySelector('[data-include="footer"]');
     if (footerPlaceholder) {
       footerPlaceholder.outerHTML = footerHTML;
+      applySharedAssetPaths(document.querySelector(".site-footer"));
+      applySharedNavLinks(document.querySelector(".site-footer"));
     }
   } catch (error) {
     console.error("Error loading footer:", error);

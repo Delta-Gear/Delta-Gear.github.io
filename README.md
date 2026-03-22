@@ -4,19 +4,19 @@ Personal portfolio site showcasing robotics, AI, and product development work. H
 
 ## Projects
 
-### BMC (Boston Medical Components)
+### Boston Micromachines
 
 - Kilo Redesign - Product redesign for medical device
 - Retinal Imaging Machine - Optical imaging system
 
-### BU (Boston University)
+### Boston University
 
 - Med Robot - Haptic End Effector - Surgical robotics haptic feedback
 - PolyFueler - Alternative fuel system
 - Robotic Pose Estimation AI - AI-powered pose detection
 - WIPERS - Smart wiping system
 
-### DC (Design Collective)
+### Personal
 
 - Kaleidoscope Lamp - Interactive lighting installation
 - Ouija - Experimental design project
@@ -25,7 +25,7 @@ Personal portfolio site showcasing robotics, AI, and product development work. H
 
 - Lenze - Industrial automation project
 
-### MIT (Massachusetts Institute of Technology)
+### MIT
 
 - Google Streetview - Computer vision application
 - Malaria Detection - Medical imaging and AI
@@ -97,12 +97,3 @@ Include the component loader script before `</body>`:
 
 - Root pages: `<script src="assets/js/include-components.js"></script>`
 - Project pages: `<script src="../../assets/js/include-components.js"></script>`
-
-## Adding a New Project
-
-1. Create `Projects/[Project Name]/` folder
-2. Add `index.html` (use project-template.html as reference)
-3. Add `card.html` (project summary with metadata)
-4. Add images to `Projects/[Project Name]/images/`
-5. Add project folder name to appropriate `data-project-cards` list in `index.html`
-6. Update this README with the new project link
