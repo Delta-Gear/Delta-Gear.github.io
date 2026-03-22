@@ -16,7 +16,10 @@
           <div class="project-metadata-layout">
             <!-- PROJECT CARD -->
             <div class="project-metadata-card">
-              <div data-include-path="card.html" data-rewrite-project-paths="true"></div>
+              <div
+                data-include-path="card.html"
+                data-rewrite-project-paths="true"
+              ></div>
             </div>
 
             <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
@@ -33,67 +36,68 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>Overview</h2>
-                                    <p>
-                                      Development of AI models for automated malaria parasite detection
-                                      in blood smear microscopy images for faster diagnosis in
-                                      developing regions.
-                                    </p>
-
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Problem Statement</h2>
-                                        <p>
-                                          Manual diagnosis is time-consuming and depends on expert
-                                          availability. Challenge: develop AI models that reliably detect
-                                          parasites with limited training data.
-                                        </p>
+                <h2>Background</h2>
+                <p>
+                  In 2021, there were 247M cases of Malaria worldwide. Late
+                  detection and treatment of the disease can prove fatal.
+                  Advancements in image recognition have the potential to
+                  drastically reduce the resources involved in receiving a
+                  diagnosis, enabling low-cost early detection tools to be
+                  deployed in remote areas with limited access to healthcare.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/s" alt="Problem Statement" />
+                <img src="images/endemic.png" alt="Global malaria burden" style="width: 40%; margin: 0 auto; display: block" />
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
               <div class="blog-text">
-                <h2>Solution & Approach</h2>
-                                        <p>
-                                          Implemented CNNs with transfer learning and data augmentation to
-                                          overcome limited labeled data. Models optimized for deployment on
-                                          mobile devices.
-                                        </p>
+                <h2>Dataset</h2>
+                <p>
+                  Dataset consisted of 25,000 images of stained red blood cells from
+                  the U.S National Insititute of Health. Each image was labeled as either "Parasitized" or "Uninfected". 
+                  Data augnmentation techniques were to expand the dataset and prevent generalization.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/s" alt="Solution & Approach" />
+                <img src="images/many_samples.png" alt="Dataset Samples" style="width: 100%; margin: 0 auto; display: block" />
               </div>
             </div>
 
             <div class="blog-row">
+              <div class="blog-text">
+                <h2>Model Architecture</h2>
+                <p>
+                  In Jupyter Notebooks, used Python and TensorFlow to build a CNN model that included:
+                  <ul>
+                    <li>Leaky ReLu layers to prevent vanishing gradients.</li>
+                    <li>Batch Normalization and Dropout layers to prevent overfitting.</li>
+                    <li>Max Pooling layers for dimensionality reduction.</li>
+                  </ul>
+                </p>
+              </div>
+              <div class="blog-image">
+                <img src="images/accuracy.png" alt="Accuracy vs Epoch" style="width: 60%; margin: 0 auto; display: block" />
+              </div>
+            </div>
+
+            <div class="blog-row blog-row-reverse">
               <div class="blog-text">
                 <h2>Results & Outcomes</h2>
-                                        <p>
-                                          Achieved detection accuracy comparable to expert microscopists
-                                          while maintaining computational efficiency for mobile deployment.
-                                        </p>
+                <p>
+                  Trained model to priorize minimizing false negatives while optimizing for low computational requirements.
+                  <ul>
+                    <li>Accuracy of 98.8% on test data set. 2568/2600 correct diagnoses.</li>
+                    <li>Time to execute: 1.32s for batch.</li>
+                    <li>Memory required: 1.06MB. Deployable on Chromebook.</li>
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/s" alt="Results & Outcomes" />
+                <img src="images/Confusion.png" alt="Confusion Matrix" style="width: 80%; margin: 0 auto; display: block" />
               </div>
-            </div>
-
-            <div class="blog-row blog-row-reverse">
-              <div class="blog-text">
-                <h2>Key Learnings</h2>
-                                        <p>
-                                          Medical AI requires careful attention to accuracy, reliability,
-                                          deployment constraints, and ethical considerations with domain
-                                          expert validation.
-                                        </p>
-              </div>
-              <div class="blog-image">
-                <img src="images/s" alt="Key Learnings" />
-              </div>
-            </div>
           </article>
         </div>
       </section>
@@ -117,4 +121,3 @@
     <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
-
