@@ -16,7 +16,10 @@
           <div class="project-metadata-layout">
             <!-- PROJECT CARD -->
             <div class="project-metadata-card">
-              <div data-include-path="card.html" data-rewrite-project-paths="true"></div>
+              <div
+                data-include-path="card.html"
+                data-rewrite-project-paths="true"
+              ></div>
             </div>
 
             <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
@@ -33,69 +36,82 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>Overview</h2>
-                                    <p>
-                                      Development of a medical imaging system specialized for retinal
-                                      examination and diagnostics, requiring integration of complex
-                                      optical components with electronic control systems.
-                                    </p>
+            <div
+              style="text-align: center; max-width: 780px; margin: 0 auto 40px"
+            >
+              <h2>Overview</h2>
+              <p>
+                Early into my role at Boston Micromachines, I was tasked with
+                leading the hardware design of a novel Retinal Imaging Machine,
+                a highly integrated system combining MEMS, laser optics,
+                electronics and precision automation. Previously, the company
+                had shipped only two custom systems in five years. Sensing an
+                opportunity to commercialize and scale this product, I focused
+                the hardware design by prioritizing modularity. This immediately
+                improved the efficiency of R&D by allowing the prototyping of
+                each module in parallel, while also enabling all contributors to
+                know exactly how their module impacted the greater system and
+                each other. This modular approach streamlined production by
+                enabling the independent manufacturing, calibration, and testing
+                of each module. Thanks to this focus, we delivered higher
+                quality, more reliable products that could be easily upgraded or
+                customized for future applications.
+              </p>
+            </div>
 
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Problem Statement</h2>
-                                        <p>
-                                          Existing retinal imaging systems lacked the precision and ease of
-                                          use required for modern clinical environments. Challenge: develop
-                                          a system delivering high-quality images while maintaining ease of
-                                          operation and reliability.
-                                        </p>
+                <h2>Applications</h2>
+                <p>
+                  Adaptive Optics Scanning Laser Ophthalmoscopy (AOSLO) uses
+                  deformable mirrors to allow researchers to see higher quality
+                  images into deeper layers of the eye.
+                </p>
+                <p>
+                  This technology has been used in
+                  <a href="https://joslin.org/"
+                    >Joslin Diabetes Research Center</a
+                  >,
+                  <a href="https://pubmed.ncbi.nlm.nih.gov/38855680/"
+                    >Medical College of Wisconsin
+                  </a>
+                  for imaging of the retina's photodetectors, among others.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/AOLSO_outer.jpg" alt="Problem Statement" />
+                <img src="images/compare.jpg" alt="Comparison of Retinal Imaging Systems" style="width: 80%; margin: 0 auto; display: block" />
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
-              <div class="blog-text">
-                <h2>Solution & Approach</h2>
-                                        <p>
-                                          Designed and developed the mechanical and optical architecture for
-                                          an advanced retinal imaging system. Integration of precision
-                                          optical components, motorized positioning systems, and electronic
-                                          controls.
-                                        </p>
-              </div>
-              <div class="blog-image">
-                <img src="images/AOSLO banner.jpg" alt="Solution & Approach" />
-              </div>
-            </div>
-
-            <div class="blog-row">
               <div class="blog-text">
                 <h2>Results & Outcomes</h2>
-                                        <p>
-                                          Successfully delivered an imaging system meeting all optical and
-                                          mechanical specifications with improved imaging quality and
-                                          reduced setup time.
-                                        </p>
+                <p>
+                  By prioritizing modularity, R&D and production of each assembly was streamlined 
+                  to be completed in parallel and improving the reliability and repeatability of the system.
+                  <ul>
+                     <li>Fully documented and productized system for future scalability.</li>
+                    <li>Optical calibration time reduced 65%.</li>
+                    <li>On-site installation time reduced from two weeks to 5 hours.</li>
+                    <li>Reduced setup time by 30% through improved user experience.</li>
+                   
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/AOSLO_CAD.jpg" alt="Results & Outcomes" />
+                <img src="images/AOSLO_CAD.jpg" alt="Solution & Approach" style="width: 80%; margin: 0 auto; display: block" />
               </div>
             </div>
 
-            <div class="blog-row blog-row-reverse">
+            <div class="blog-row">
               <div class="blog-text">
-                <h2>Key Learnings</h2>
-                                        <p>
-                                          This project reinforced the importance of early collaboration
-                                          between optical, mechanical, and software teams. Medical device
-                                          development requires particular attention to reliability and user
-                                          experience.
-                                        </p>
+                <h2>Technical Leadership Experience</h2>
+                <p>
+                  While leading the hardware design, I served as the 
+                  product manager coordinating timelines, objectives and deliverables across the cross-functional team of Optical, Electrical, Software and Mechanical engineers.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/laser-masked.png" alt="Key Learnings" />
+                <img src="images/AOLSO_outer.jpg" alt="Results & Outcomes" style="width: 80%; margin: 0 auto; display: block" />
               </div>
             </div>
           </article>
@@ -121,4 +137,3 @@
     <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
-
