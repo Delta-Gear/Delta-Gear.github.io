@@ -36,125 +36,187 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>Overview</h2>
-            <p>
-              WIPERS is a multi-robot autonomous system designed to coordinate
-              multiple robots for simultaneous task execution. The system
-              integrates computer vision for whiteboard detection, motion
-              planning for convergence paths, and real-time communication for
-              task allocation among robots.
-            </p>
-
-            <!-- BLOG SECTION WITH TEXT AND IMAGE -->
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Challenge & Problem Statement</h2>
+                <h2>Objective</h2>
                 <p>
-                  The challenge was to develop an autonomous multi-robot system
-                  capable of efficiently coordinating to erase magnetic
-                  whiteboards simultaneously. Key difficulties included:
+                  WIPERs goal is to develop a $50 system to 
+                  autonomously erase the whiteboard, that can be updated 
+                  into a multi-robot system to improve performance and capabilities.
                 </p>
-                <ul>
-                  <li>
-                    Coordinating multiple robots without centralized control
-                  </li>
-                  <li>
-                    Implementing robust whiteboard detection and path planning
-                  </li>
-                  <li>Handling dynamic environments and collision avoidance</li>
-                  <li>
-                    Ensuring task allocation is fair and efficient across robots
-                  </li>
-                </ul>
+                <p> <i> Awarded "Best Vision and Execution" of BU RAS 2025</i></p>
+                <p> <i> Awarded "Best Start-Up Branding" of BU RAS 2025</i></p>
               </div>
               <div class="blog-image">
-                <img src="images/hero.jpg" alt="Problem context" />
+                <div
+                  style="display: flex; gap: 12px; justify-content: center; align-items: stretch; flex-wrap: wrap"
+                >
+                  <img
+                    src="images/logo.png"
+                    alt="WIPERS logo"
+                    style="width: calc(25% - 6px); min-width: 180px; height: 180px; object-fit: cover"
+                  />
+                  <img
+                    src="images/wiping.png"
+                    alt="WIPERS system overview"
+                    style="width: calc(60% - 6px); min-width: 180px; height: 220px; object-fit: scale-down"
+                  />
+                </div>
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
               <div class="blog-text">
-                <h2>Solution & Approach</h2>
+                <h2>Design and Build</h2>
                 <p>
-                  We developed an integrated ROS-based architecture that
-                  combines:
+                  Uses magnets and two independentally 
+                  driven motors to attach to and magnetically traverse the whiteboard,
+                  erasing along its path.
                 </p>
-                <ul>
-                  <li>
-                    <strong>Perception:</strong> Computer vision algorithms for
-                    whiteboard detection and localization
-                  </li>
-                  <li>
-                    <strong>Path Planning:</strong> Convergence algorithms
-                    ensuring robots meet at optimal points
-                  </li>
-                  <li>
-                    <strong>Task Allocation:</strong> Distributed task
-                    allocation based on robot proximity and availability
-                  </li>
-                  <li>
-                    <strong>Control:</strong> Real-time motor control and
-                    feedback loops for accurate execution
-                  </li>
-                </ul>
                 <p>
-                  The system uses Python with ROS for middleware communication
-                  and MATLAB Simulink for validation and testing.
+                  Iterated through 12 design prototypes, minimizing the footprint, 
+                  reducing component cost to $28, and optimizing Magnet Force / Weight / Motor Torque ratios.
+
                 </p>
+                
               </div>
               <div class="blog-image">
-                <img src="images/hero.jpg" alt="Solution implementation" />
+                <div
+                  style="display: flex; gap: 12px; justify-content: center; align-items: stretch; flex-wrap: wrap"
+                >
+                  <img
+                    src="images/product.png"
+                    alt="WIPERS robot design"
+                    style="width: calc(50% - 6px); min-width: 180px; height: 260px; object-fit: scale-down"
+                  />
+                  <img
+                    src="images/bottom.png"
+                    alt="WIPERS robot underside"
+                    style="width: calc(25% - 6px); min-width: 180px; height: 260px; object-fit: scale-down; transform: rotate(0deg)"
+                  />
+                </div>
               </div>
             </div>
 
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Results & Outcomes</h2>
-                <p>The system successfully demonstrated:</p>
-                <ul>
-                  <li>Multi-robot coordination without collision</li>
-                  <li>Reliable whiteboard detection and erasure</li>
-                  <li>
-                    Adaptive behavior in varying lighting and board conditions
-                  </li>
-                  <li>
-                    Scalability to additional robots with minimal
-                    reconfiguration
-                  </li>
-                </ul>
+                <h2>Electronics and Sensor Integration</h2>
                 <p>
-                  The implementation validated the efficiency of distributed
-                  task allocation and established a foundation for future
-                  autonomous multi-robot systems.
+                  Designed a compact enclosure to contain all electronics,
+                  motors and sensors. This includes:
+                  <ul>
+                    <li>Rechargable battery pack.</li>
+                    <li>Motor encoders and IMU to track travel and orientation.</li>
+                    <li>ESP32 for bluetooth communication with Master of Perception unit (MoP)</li>
+                    <li>Limit switches to allow a single WIPER bot to detect whiteboard bounds and collision without MoP.</li>
+                  </ul>
                 </p>
               </div>
               <div class="blog-image">
-                <img src="images/hero.jpg" alt="Project results" />
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    justify-content: center;
+                    align-items: stretch;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <img
+                    src="images/Inside.png"
+                    alt="WIPERS electronics diagram"
+                    style="
+                      width: calc(50% - 6px);
+                      min-width: 220px;
+                      height: 300px;
+                      object-fit: scale-down;
+                      transform: rotate(90deg);
+                    "
+                  />
+                  <img
+                    src="images/Electronic Diagram.png"
+                    alt="WIPERS internal integration"
+                    style="
+                      width: calc(50% - 6px);
+                      min-width: 220px;
+                      height: 300px;
+                      object-fit: scale-down;
+                    "
+                  />
+                </div>
               </div>
             </div>
 
-            <h2>Key Learnings</h2>
-            <ul>
-              <li>
-                Distributed algorithms are essential for scalable autonomous
-                systems
-              </li>
-              <li>
-                Robust error handling and recovery mechanisms are critical in
-                real-world deployment
-              </li>
-              <li>
-                Extensive simulation and testing reduce field deployment time
-              </li>
-              <li>
-                Clear communication protocols between robots are fundamental to
-                coordination
-              </li>
-              <li>
-                Graceful degradation—ensuring systems function even when
-                components fail—is as important as nominal operation
-              </li>
-            </ul>
+            <div class="blog-row blog-row-reverse">
+              <div class="blog-text">
+                <h2>Perception Based Task Allocation</h2>
+                <p>
+                  Simulated in Python, the Master of Perception (MoP) unit
+                  detects each WIPER, identifies ink targets to erase and 
+                  boxed ink regions to avoid, like a note from mom.
+                </p>
+                <p>
+                  The MoP allocates tasks to each WIPER using a Voronoi
+                  partitioning algorithm that balances workload while minimizing
+                  travel distance.
+                </p>
+              </div>
+              <div class="blog-image">
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    justify-content: center;
+                    align-items: stretch;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <img
+                    src="images/note.jpg"
+                    alt="Perception map with protected notes"
+                    style="
+                      width: calc(20% - 6px);
+                      min-width: 220px;
+                      height: 350px;
+                      object-fit: scale-down;
+                    "
+                  />
+                  <img
+                    src="images/task_allocation_2_robots.gif"
+                    alt="Task allocation across two robots"
+                    style="
+                      width: calc(50% - 6px);
+                      min-width: 220px;
+                      height: 350px;
+                      object-fit: scale-down;
+                    "
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-row">
+              <div class="blog-text">
+                <h2>Coverage Path Planning</h2>
+                <p>
+                  Using Python, simulated a boustrophedon coverage path planning 
+                  algorithm to optimize the time and distance required to clean
+                  the entire whiteboard or specific targeted sections.
+                </p>
+              </div>
+              <div class="blog-image">
+                <img
+                  src="images/presentation_example.gif"
+                  alt="Coverage path planning simulation"
+                  style="
+                    width: 60%;
+                    max-width: 250px;
+                    margin: 0 auto;
+                    display: block;
+                  "
+                />
+              </div>
+            </div>
           </article>
         </div>
       </section>
