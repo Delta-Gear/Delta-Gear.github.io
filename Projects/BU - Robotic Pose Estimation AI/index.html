@@ -16,7 +16,10 @@
           <div class="project-metadata-layout">
             <!-- PROJECT CARD -->
             <div class="project-metadata-card">
-              <div data-include-path="card.html" data-rewrite-project-paths="true"></div>
+              <div
+                data-include-path="card.html"
+                data-rewrite-project-paths="true"
+              ></div>
             </div>
 
             <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
@@ -33,66 +36,111 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>Overview</h2>
-                                    <p>
-                                      Development of computer vision and deep learning capabilities for
-                                      accurate 6D pose estimation of objects in robotic manipulation
-                                      tasks.
-                                    </p>
-
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Problem Statement</h2>
-                                        <p>
-                                          Precise object pose estimation is critical for robotic grasping.
-                                          Traditional methods fail with lighting and occlusion. Challenge:
-                                          develop robust deep learning models for real robot environments.
-                                        </p>
+                <h2>Overview</h2>
+                <p>
+                  Utilize deep learning to train a model to detect the pose and
+                  position of a Robotic Manipulator Arm from an external camera.
+                </p>
+                <p>
+                  This can enable robots in a multi-robot system to communicate
+                  implicitly with each other. Seeing the motion/pose of another
+                  robot and react accordingly.
+                </p>
+                <p>
+                  Also useful for Simutaneous Localization and Mapping (SLAM)
+                  and robot supervision from external cameras, such as
+                  inspection drones.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/O" alt="Problem Statement" />
+                <img
+                  src="images/Overview.png"
+                  alt="Overview"
+                  style="max-height: 400px; width: auto"
+                />
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
               <div class="blog-text">
-                <h2>Solution & Approach</h2>
-                                        <p>
-                                          Implemented CNNs trained on synthetic and real data for 6D pose
-                                          estimation. System integrates RGB-D camera input with real-time
-                                          inference for robotic control.
-                                        </p>
+                <h2>Simulated Dataset</h2>
+                <p>
+                  Simulated 10,000 sythetic image dataset in NVDIA Isaac Sim, by
+                  programming a UR10 robotic arm to move to random poses with
+                  ROS.
+                </p>
+                <p>
+                  To prevent generalization, randomized camera, lighting,
+                  textures, and backgrounds using domain randomization
+                  techniques.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/O" alt="Solution & Approach" />
+                <img src="images/domain_random.png" alt="Simulated Dataset" />
               </div>
             </div>
 
             <div class="blog-row">
+              <div class="blog-text">
+                <h2>Two-Phase Pipeline Architecture</h2>
+                <p>
+                  Two Convolutional Nural Networks (CNNs) in a pipeline. First,
+                  a model to detect the bounding box of the robotic arm in the
+                  image, then crops the image. The next model performs a
+                  keypoint regression to detect each joint of the robotic arm.
+                </p>
+                <p>
+                  Both models utilized transfer learning from a Res-Net
+                  backbone.
+                </p>
+              </div>
+              <div class="blog-image">
+                <img
+                  src="images/flow.png"
+                  alt="Two-Phase Pipeline Architecture"
+                  style="max-height: 400px; width: auto"
+                />
+              </div>
+            </div>
+
+            <div class="blog-row" style="justify-content: center; gap: 1rem">
+              <div class="blog-image">
+                <img src="images/Bounding Box.png" alt="Photo 1" />
+              </div>
+              <div class="blog-image">
+                <img src="images/keypoint.png" alt="Photo 2" />
+              </div>
+              <div class="blog-image">
+                <img src="images/skeleton.png" alt="Photo 3" />
+              </div>
+            </div>
+
+            <div class="blog-row blog-row-reverse">
               <div class="blog-text">
                 <h2>Results & Outcomes</h2>
-                                        <p>
-                                          Achieved real-time pose estimation with high accuracy, enabling
-                                          successful robotic grasping across diverse objects and scenarios.
-                                        </p>
+                <p>
+                  Model was able to predict the position of each robotic joint
+                  within a mean error of 6.22cm. 80.2% of predictions were
+                  withing 10cm of true performance, which was on consistent with
+                  similar models.
+                </p>
+                <p>
+                  This model can perform with a inference speed of 18FPS, which
+                  is valid for real-time operation.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/O" alt="Results & Outcomes" />
+                <img
+                  src="images/2D keypoint error.png"
+                  alt="2D Keypoint Error"
+                />
               </div>
             </div>
 
-            <div class="blog-row blog-row-reverse">
-              <div class="blog-text">
-                <h2>Key Learnings</h2>
-                                        <p>
-                                          Domain adaptation and synthetic-to-real transfer remain critical.
-                                          Continuous refinement and real-world testing were essential for
-                                          practical deployment.
-                                        </p>
-              </div>
-              <div class="blog-image">
-                <img src="images/O" alt="Key Learnings" />
-              </div>
+            <div class="blog-image">
+              <img src="images/Poster.jpg" alt="Poster" />
             </div>
           </article>
         </div>
@@ -117,4 +165,3 @@
     <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
-
