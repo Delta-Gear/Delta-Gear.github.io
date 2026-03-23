@@ -16,7 +16,10 @@
           <div class="project-metadata-layout">
             <!-- PROJECT CARD -->
             <div class="project-metadata-card">
-              <div data-include-path="card.html" data-rewrite-project-paths="true"></div>
+              <div
+                data-include-path="card.html"
+                data-rewrite-project-paths="true"
+              ></div>
             </div>
 
             <!-- EXPERIENCE/EDUCATION CARD (Right-justified) -->
@@ -33,76 +36,133 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>Overview</h2>
-                        <p>
-                          This project explored how a teleoperated surgical tool could
-                          return tactile information to the operator during delicate
-                          manipulation. The work focused on integrating sensing, actuation,
-                          and mechanical packaging into a compact robotic end effector
-                          suitable for medical robotics workflows.
-                        </p>
-
             <div class="blog-row">
               <div class="blog-text">
-                <h2>Problem Statement</h2>
-                            <p>
-                              Teleoperated surgical systems often remove the surgeon from direct
-                              physical contact with the tissue, reducing the ability to feel
-                              force, contact, and compliance. The challenge was to create a tool
-                              that could measure those signals and communicate them back to the
-                              operator in a meaningful, responsive way.
-                            </p>
+                <h2>Overview</h2>
+                <p>
+                  As medical robotic systems become more prevalent, surgeons
+                  have lost physical and tactile feedback, which may increase
+                  the risk of surgical complications.
+                </p>
+                <p>
+                  A Surgical End Effector prototype was created with integrated
+                  force feedback and capacitive feedback into a surgical tool,
+                  relaying pneumatic signals to a wrist brace. Supplying remote
+                  tactile sensing to the teleoperator.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/product.png" alt="Problem Statement" />
+                <img
+                  src="images/Product Diagram.jpg"
+                  alt="Haptic End Effector Overview"
+                  style="width: 80%; margin: 0 auto; display: block"
+                />
               </div>
             </div>
 
             <div class="blog-row blog-row-reverse">
               <div class="blog-text">
-                <h2>Solution &amp; Approach</h2>
-                            <p>
-                              The design combined force feedback and capacitive sensing within
-                              the end effector, then translated those measurements into
-                              pneumatic feedback delivered through a wrist interface. This
-                              created a closed feedback loop between the surgical tool and the
-                              user while maintaining a compact, controllable hardware package.
-                            </p>
+                <h2>System Overview</h2>
+                <p>
+                  Wrist brace is inflates by a motorize pump, which the Arduino
+                  controls to match the pneumatic pressure to the force exerted
+                  on the instrument.
+                </p>
+                <p>
+                  Force thresholds were programmed to indicate force required to
+                  cut through different tissues.
+                </p>
+                <p>
+                  The capacitive touch sensor triggers an LED and vibration
+                  module for visual and haptic feedback.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/system.png" alt="Solution &amp; Approach" />
+                <div
+                  style="
+                    display: flex;
+                    gap: 12px;
+                    justify-content: center;
+                    align-items: stretch;
+                    flex-wrap: wrap;
+                  "
+                >
+                  <img
+                    src="images/circuit.jpg"
+                    alt="Circuit details"
+                    style="
+                      width: calc(50% - 6px);
+                      min-width: 200px;
+                      height: 300px;
+                      object-fit: scale-down;
+                    "
+                  />
+                  <img
+                    src="images/Pneumo Diagram.jpg"
+                    alt="Pneumatic System Diagram"
+                    style="
+                      width: calc(50% - 6px);
+                      min-width: 200px;
+                      height: 300px;
+                      object-fit: scale-down;
+                    "
+                  />
+                </div>
               </div>
             </div>
 
-            <div class="blog-row">
+            <div
+              style="
+                display: flex;
+                gap: 6px;
+                justify-content: center;
+                align-items: stretch;
+                flex-wrap: wrap;
+              "
+            >
+              <img
+                src="images/Capacitive.gif"
+                alt="Capacitive Feedback"
+                style="
+                  width: calc(40% - 3px);
+                  min-width: 100px;
+                  height: 300px;
+                  object-fit: scale-down;
+                "
+              />
+              <img
+                src="images/force.gif"
+                alt="Pneumatic Feedback System"
+                style="
+                  width: calc(50% - 3px);
+                  height: 300px;
+                  min-width: 100px;
+                  object-fit: scale-down;
+                "
+              />
+            </div>
+
+            <div class="blog-row blog-row-reverse">
               <div class="blog-text">
                 <h2>Results &amp; Outcomes</h2>
-                            <p>
-                              The final prototype demonstrated a practical pathway for remote
-                              tactile sensing in teleoperated systems. It validated the
-                              integration of multiple sensing modes, showed that haptic cues
-                              could be relayed to the operator, and established a strong
-                              platform for future refinement in medical robotics applications.
-                            </p>
+                <p>
+                  Developed experiment where users would attempt to perform a
+                  series of cuts, scoring the top layer of a skin substitute
+                  without cutting through it.
+                </p>
+                <p>
+                  Analyzed with NASA Task Load Index (TLX). Operator's percieved
+                  exertion decreased by 32% with addition of the feedback
+                  system. Additionally, excess force errors were drastically
+                  reduced.
+                </p>
               </div>
               <div class="blog-image">
-                <img src="images/product.png" alt="Results &amp; Outcomes" />
-              </div>
-            </div>
-
-            <div class="blog-row blog-row-reverse">
-              <div class="blog-text">
-                <h2>Key Learnings</h2>
-                            <p>
-                              The project reinforced how tightly mechanical design, sensing
-                              fidelity, and control response are linked in haptic systems. Even
-                              small packaging decisions affect usability and signal quality, and
-                              meaningful feedback depends as much on interpretation by the
-                              operator as on the underlying sensor hardware.
-                            </p>
-              </div>
-              <div class="blog-image">
-                <img src="images/system.png" alt="Key Learnings" />
+                <img
+                  src="images/NASA.png"
+                  alt="Results and outcomes"
+                  style="width: 80%; margin: 0 auto; display: block"
+                />
               </div>
             </div>
           </article>
@@ -128,4 +188,3 @@
     <script src="../../assets/js/project-navigation.js"></script>
   </body>
 </html>
-
