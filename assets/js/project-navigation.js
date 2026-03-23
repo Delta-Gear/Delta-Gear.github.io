@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", async function () {
     "BMC - Kilo Redesign",
     "BMC - Retinal Imaging Machine",
     "BU - Med Robot - Haptic End Effector",
-    "BU - PolyFueler",
     "BU - Robotic Pose Estimation AI",
     "BU - WIPERS",
     "DC - Kaleidoscope Lamp",
