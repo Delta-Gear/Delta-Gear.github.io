@@ -278,10 +278,10 @@
           </div>
 
           <div class="view-toggle">
-            <button class="toggle-btn active" data-view="timeline">
-              Timeline
+            <button class="toggle-btn" data-view="timeline">Timeline</button>
+            <button class="toggle-btn active" data-view="skills-view">
+              Skills
             </button>
-            <button class="toggle-btn" data-view="skills-view">Skills</button>
           </div>
         </div>
       </div>
@@ -289,9 +289,9 @@
       <div class="site-container">
         <div class="portfolio-layout">
           <aside class="portfolio-sidebar">
-            <h3 id="sidebar-title">Timeline</h3>
+            <h3 id="sidebar-title">Skills</h3>
 
-            <ul class="sidebar-menu timeline-menu">
+            <ul class="sidebar-menu timeline-menu" style="display: none">
               <li>
                 <a href="#timeline-personal" class="sidebar-link"
                   >Personal Projects</a
@@ -322,7 +322,7 @@
               </li>
             </ul>
 
-            <ul class="sidebar-menu skills-menu" style="display: none">
+            <ul class="sidebar-menu skills-menu">
               <li>
                 <a href="#skill-product-design" class="sidebar-link"
                   >Product Design</a
@@ -345,7 +345,7 @@
           </aside>
 
           <div class="portfolio-content">
-            <div class="portfolio-mode active" id="timeline">
+            <div class="portfolio-mode" id="timeline">
               <div class="portfolio-group" id="timeline-personal">
                 <div class="portfolio-group-heading">
                   <h3>Personal Projects</h3>
@@ -409,7 +409,7 @@
               </div>
             </div>
 
-            <div class="portfolio-mode" id="skills-view">
+            <div class="portfolio-mode active" id="skills-view">
               <div class="portfolio-group" id="skill-product-design">
                 <div class="portfolio-group-heading">
                   <h3>Product Design</h3>
@@ -436,7 +436,7 @@
                 </div>
                 <div
                   class="cards-list"
-                  data-project-cards='["BU - Robotic Pose Estimation AI", "MIT - Google Streetview"]'
+                  data-project-cards='["BU - Robotic Pose Estimation AI", "MIT - Google Streetview", "MIT - Malaria Detection"]'
                 ></div>
               </div>
 
@@ -446,7 +446,7 @@
                 </div>
                 <div
                   class="cards-list"
-                  data-project-cards='["MIT - Malaria Detection", "UM - Particulate Mask", "UM - FEA Sim of Bone", "UM - DFAM Decision Tool"]'
+                  data-project-cards='["UM - FEA Sim of Bone", "UM - Particulate Mask",  "UM - DFAM Decision Tool"]'
                 ></div>
               </div>
             </div>
@@ -618,7 +618,7 @@
           sections.forEach((section) => observer.observe(section));
         }
 
-        setView("timeline");
+        setView("skills-view");
       });
     </script>
   </body>
