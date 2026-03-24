@@ -105,13 +105,13 @@ img {
 
 /* HERO */
 .hero-section {
-  padding: 42px 0 28px;
+  padding: 24px 0 16px;
 }
 
 .hero-card {
   display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  min-height: 520px;
+  grid-template-columns: 0.88fr 1.12fr;
+  min-height: 440px;
   background: var(--surface);
   border: 1px solid rgba(60, 60, 60, 0.08);
   border-radius: 28px;
@@ -131,7 +131,7 @@ img {
 }
 
 .hero-content {
-  padding: 54px 48px;
+  padding: 38px 34px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -154,29 +154,29 @@ img {
 }
 
 .hero-content h1 {
-  margin: 0 0 16px;
-  font-size: clamp(2.2rem, 4vw, 4rem);
+  margin: 0 0 12px;
+  font-size: clamp(1.95rem, 3.2vw, 3.2rem);
   line-height: 1.02;
   color: var(--charcoal);
 }
 
 .hero-content p {
-  margin: 0 0 26px;
+  margin: 0 0 16px;
   color: var(--muted);
-  line-height: 1.75;
-  font-size: 1.04rem;
+  line-height: 1.62;
+  font-size: 1rem;
   max-width: 56ch;
 }
 
 .hero-buttons {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .hero-skills {
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 12px;
   border-top: 1px solid rgba(90, 82, 74, 0.22);
   display: grid;
   gap: 4px;
@@ -1357,6 +1357,10 @@ img {
     grid-template-columns: 1fr;
   }
 
+  .hero-card {
+    min-height: 0;
+  }
+
   .portfolio-sidebar {
     position: relative;
     top: 0;
@@ -1409,8 +1413,12 @@ img {
     flex-wrap: wrap;
   }
 
+  .hero-section {
+    padding: 16px 0 12px;
+  }
+
   .hero-content {
-    padding: 34px 24px;
+    padding: 24px 20px;
   }
 
   .hero-skills {
