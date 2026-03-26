@@ -306,11 +306,6 @@
 
             <ul class="sidebar-menu timeline-menu" style="display: none">
               <li>
-                <a href="#timeline-personal" class="sidebar-link"
-                  >Personal Projects</a
-                >
-              </li>
-              <li>
                 <a href="#timeline-boston-university-ms" class="sidebar-link"
                   >Boston University (MS)</a
                 >
@@ -331,6 +326,11 @@
               <li>
                 <a href="#timeline-umass" class="sidebar-link"
                   >UMass Amherst (BS)</a
+                >
+              </li>
+              <li>
+                <a href="#timeline-personal" class="sidebar-link"
+                  >Personal Projects</a
                 >
               </li>
             </ul>
@@ -359,16 +359,6 @@
 
           <div class="portfolio-content">
             <div class="portfolio-mode" id="timeline">
-              <div class="portfolio-group" id="timeline-personal">
-                <div class="portfolio-group-heading">
-                  <h3>Personal Projects</h3>
-                </div>
-                <div
-                  class="cards-list"
-                  data-project-cards='["DC - Ouija", "DC - Kaleidoscope Lamp"]'
-                ></div>
-              </div>
-
               <div class="portfolio-group" id="timeline-boston-university-ms">
                 <div class="portfolio-group-heading">
                   <h3>MS - Robotics & Autonomous Systems</h3>
@@ -418,6 +408,16 @@
                 <div
                   class="cards-list"
                   data-project-cards='["UM - Particulate Mask", "UM - FEA Sim of Bone", "UM - DFAM Decision Tool"]'
+                ></div>
+              </div>
+
+              <div class="portfolio-group" id="timeline-personal">
+                <div class="portfolio-group-heading">
+                  <h3>Personal Projects</h3>
+                </div>
+                <div
+                  class="cards-list"
+                  data-project-cards='["DC - Ouija", "DC - Kaleidoscope Lamp"]'
                 ></div>
               </div>
             </div>
@@ -593,6 +593,22 @@
         toggleButtons.forEach((button) => {
           button.addEventListener("click", function () {
             setView(this.dataset.view);
+
+            const portfolioSection = document.getElementById("portfolio");
+            if (portfolioSection) {
+              const siteHeader = document.querySelector(".site-header");
+              const headerOffset = siteHeader ? siteHeader.offsetHeight : 0;
+              const top =
+                portfolioSection.getBoundingClientRect().top +
+                window.scrollY -
+                headerOffset -
+                12;
+
+              window.scrollTo({
+                top: Math.max(top, 0),
+                behavior: "smooth",
+              });
+            }
           });
         });
 
