@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       home: `${basePath}index.html`,
       about: `${basePath}about.html`,
       career: `${basePath}index.html#career-overview`,
-      projects: `${basePath}index.html#portfolio`,
+      projects: `${basePath}index.html#skill-product-design`,
       skills: `${basePath}index.html#skills`,
       resume: `${basePath}resume.html`,
     };
@@ -70,6 +70,46 @@ document.addEventListener("DOMContentLoaded", async function () {
       if (href) {
         link.setAttribute("href", href);
       }
+    });
+  }
+
+  function setupHeaderOffsetNav(scope) {
+    if (!scope) {
+      return;
+    }
+
+    const careerLink = scope.querySelector('[data-nav-target="career"]');
+    if (!careerLink) {
+      return;
+    }
+
+    careerLink.addEventListener("click", (event) => {
+      const href = careerLink.getAttribute("href");
+      if (!href || !href.includes("#")) {
+        return;
+      }
+
+      const hashIndex = href.indexOf("#");
+      const targetHash = href.slice(hashIndex);
+      const target = document.querySelector(targetHash);
+
+      if (!target) {
+        return;
+      }
+
+      event.preventDefault();
+
+      const siteHeader = document.querySelector(".site-header");
+      const headerOffset = siteHeader ? siteHeader.offsetHeight : 0;
+      const top =
+        target.getBoundingClientRect().top + window.scrollY - headerOffset - 12;
+
+      window.scrollTo({
+        top: Math.max(top, 0),
+        behavior: "smooth",
+      });
+
+      history.replaceState(null, "", targetHash);
     });
   }
 
@@ -84,6 +124,7 @@ document.addEventListener("DOMContentLoaded", async function () {
       headerPlaceholder.outerHTML = headerHTML;
       applySharedAssetPaths(document.querySelector(".site-header"));
       applySharedNavLinks(document.querySelector(".site-header"));
+      setupHeaderOffsetNav(document.querySelector(".site-header"));
     }
   } catch (error) {
     console.error("Error loading header:", error);
