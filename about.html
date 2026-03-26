@@ -19,9 +19,20 @@
             <div class="hero-content">
               <div class="hero-eyebrow">About Me</div>
               <h1>Hands on Problem Solver</h1>
-              <p>Inspired to pursue engineering through FIRST Robotics.</p>
-              <h1>Always Learning, Driven by Curiosity</h1>
-              <p>Passionate about continuous growth and exploration.</p>
+              <p>
+                I like understanding how things work by taking them apart and
+                putting them back together. Whether it's a product, a system, or
+                just an idea, I enjoy getting hands-on and figuring things out
+                through trial, iteration, and curiosity.
+              </p>
+              <h1>What Keeps Me Curious</h1>
+              <p>
+                I'm naturally drawn to learning new skills and adapting to
+                unfamiliar challenges. Whether it's a new technology, tool, or
+                sport, I enjoy the process of starting from scratch and building
+                up understanding over time. That mindset is a big part of why
+                I'm always looking for opportunities to keep growing.
+              </p>
               <blockquote class="hero-quote">
                 <div class="quote-content">
                   <span class="quote-text">"Journey before destination."</span>
@@ -84,12 +95,64 @@
       <section class="article-section">
         <div class="site-container">
           <article class="article-content">
-            <h2>My Journey</h2>
+            <div class="milestones-header">
+              <h2>Milestones</h2>
+              <p>A few defining parts of my journey, outside of my career.</p>
+            </div>
 
-            <p>
-              In high school, I was inspired to become an engineer after joining
-              a FIRST Robotics team.
-            </p>
+            <div class="milestones-grid" aria-label="Career milestones">
+              <article class="milestone-item">
+                <h3 class="milestone-title">Wedding Officiant</h3>
+                <p class="milestone-subtitle">State of New Hampshire</p>
+                <p class="milestone-text">
+                  Trusted to give the most meaningful speech of a couple's life.
+                </p>
+              </article>
+
+              <article class="milestone-item">
+                <h3 class="milestone-title">Head of the Charles Regatta</h3>
+                <p class="milestone-subtitle">
+                  UMass Amherst Collegiate Rowing
+                </p>
+                <p class="milestone-text">
+                  Competed in largest rowing regatta in the world, in both
+                  collegiate and alumni boats.
+                </p>
+              </article>
+
+              <article class="milestone-item">
+                <h3 class="milestone-title">Board Game Enthusiast</h3>
+                <p class="milestone-subtitle">
+                  "He's the best at explaining the rules."
+                </p>
+                <p class="milestone-text">
+                  Proven ability to convey complex topics under intense time
+                  pressure.
+                </p>
+              </article>
+
+              <article class="milestone-item">
+                <h3 class="milestone-title">FIRST Robotics</h3>
+                <p class="milestone-subtitle">High School</p>
+                <p class="milestone-text">
+                  Inspired me to pursue engineering by building robots to
+                  compete in soccer, ultimate frisbee and other sports.
+                </p>
+              </article>
+            </div>
+
+            <div class="about-projects-heading">
+              <h3>Personal Projects</h3>
+            </div>
+            <div
+              class="cards-list"
+              data-project-cards='["DC - Ouija", "DC - Kaleidoscope Lamp"]'
+            ></div>
+            <div class="about-projects-cta">
+              <a class="btn-secondary" href="index.html#portfolio"
+                >Explore Other Projects</a
+              >
+            </div>
           </article>
         </div>
       </section>
@@ -98,5 +161,63 @@
     <div data-include="footer"></div>
 
     <script src="assets/js/include-components.js"></script>
+    <script>
+      // Load project cards from individual card.html files.
+      async function loadProjectCards() {
+        const cardLists = document.querySelectorAll("[data-project-cards]");
+
+        for (const cardList of cardLists) {
+          const projectCards = JSON.parse(
+            cardList.getAttribute("data-project-cards"),
+          );
+
+          for (const projectName of projectCards) {
+            try {
+              const response = await fetch(`Projects/${projectName}/card.html`);
+              if (response.ok) {
+                const html = await response.text();
+                cardList.insertAdjacentHTML("beforeend", html);
+              }
+            } catch (error) {
+              console.error(
+                `Error loading project card ${projectName}:`,
+                error,
+              );
+            }
+          }
+        }
+      }
+
+      // Make loaded cards navigate to each project's page.
+      function setupProjectCardNavigation() {
+        const projectCards = document.querySelectorAll(".project-card");
+        projectCards.forEach((card) => {
+          card.style.cursor = "pointer";
+          card.addEventListener("click", function () {
+            const cardsList = this.closest(".cards-list");
+            if (!cardsList || !cardsList.hasAttribute("data-project-cards")) {
+              return;
+            }
+
+            const projectNames = JSON.parse(
+              cardsList.getAttribute("data-project-cards"),
+            );
+            const cardIndex = Array.from(
+              cardsList.querySelectorAll(".project-card"),
+            ).indexOf(this);
+
+            if (cardIndex >= 0 && cardIndex < projectNames.length) {
+              const projectName = projectNames[cardIndex];
+              window.location.href = `Projects/${projectName}/index.html`;
+            }
+          });
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", async function () {
+        await loadProjectCards();
+        setupProjectCardNavigation();
+      });
+    </script>
   </body>
 </html>
