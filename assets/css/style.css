@@ -1047,6 +1047,14 @@ div.about-banner-image {
   margin: 28px 0;
 }
 
+.blog-row-three {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  align-items: start;
+  margin: 28px 0;
+}
+
 .blog-row-reverse {
   grid-template-columns: 1fr 1fr;
 }
